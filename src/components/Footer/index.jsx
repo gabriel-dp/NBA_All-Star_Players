@@ -4,7 +4,7 @@ function Footer() {
 	return (
 		<FooterContainer>
 			<FooterWrapper>
-				<p>This project is not for profit and has no official relation with NBA</p>
+				<p>This is a unofficial and non-profit project</p>
 				<p>
 					Made with love and work by&nbsp;
 					<a

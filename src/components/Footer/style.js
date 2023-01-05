@@ -12,8 +12,11 @@ export const FooterContainer = styled.div`
 
 export const FooterWrapper = styled.div`
 	width: min(100%, 75rem);
+	padding: 2rem;
+	font-size: 0.85rem;
 	color: ${({ theme }) => theme.text};
 	opacity: 0.6;
+	text-align: center;
 
 	display: flex;
 	flex-direction: column;
