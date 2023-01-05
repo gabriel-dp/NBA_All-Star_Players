@@ -7,6 +7,11 @@ const GlobalStyle = createGlobalStyle`
 		box-sizing: border-box;
 		font-family: Open-Sans, Helvetica, Sans-Serif;
 	}
+
+	body {
+		background-color: ${({ theme }) => theme.background};
+		transition: background 0.25s ease;
+	}
 `;
 
 export default GlobalStyle;

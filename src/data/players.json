@@ -1,0 +1,88 @@
+{
+	"players": [
+		{
+			"firstName": "LeBron",
+			"lastName": "James",
+			"position": "F",
+			"team": "LAL",
+			"number": 6,
+			"isCaptain": true,
+			"stats": {
+				"pts": 29.4,
+				"reb": 8.4,
+				"ast": 7.3
+			},
+			"image": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png"
+		},
+		{
+			"firstName": "Donovan",
+			"lastName": "Mitchell",
+			"position": "G",
+			"team": "CLE",
+			"number": 45,
+			"isCaptain": false,
+			"stats": {
+				"pts": 28.7,
+				"reb": 3.1,
+				"ast": 7.4
+			},
+			"image": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3908809.png"
+		},
+		{
+			"firstName": "Kevin",
+			"lastName": "Durant",
+			"position": "F",
+			"team": "BKN",
+			"number": 7,
+			"isCaptain": false,
+			"stats": {
+				"pts": 28.7,
+				"reb": 3.1,
+				"ast": 7.4
+			},
+			"image": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3202.png&w=350&h=254"
+		},
+		{
+			"firstName": "Ja",
+			"lastName": "Morant",
+			"position": "G",
+			"team": "MEM",
+			"number": 12,
+			"isCaptain": false,
+			"stats": {
+				"pts": 28.7,
+				"reb": 3.1,
+				"ast": 7.4
+			},
+			"image": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4279888.png"
+		},
+		{
+			"firstName": "Luka",
+			"lastName": "Doncic",
+			"position": "G",
+			"team": "DAL",
+			"number": 7,
+			"isCaptain": false,
+			"stats": {
+				"pts": 28.7,
+				"reb": 3.1,
+				"ast": 7.4
+			},
+			"image": "https://s3.amazonaws.com/kingschat/uploads/media/5d6fbf06e7ee390001d3091e/81f94c9f-6a31-4e41-8ab6-45103c97bb78"
+		},
+		{
+			"firstName": "Giannis",
+			"lastName": "Antetokoumpo",
+			"position": "F",
+			"team": "MIL",
+			"number": 34,
+			"isCaptain": true,
+			"stats": {
+				"pts": 28.7,
+				"reb": 3.1,
+				"ast": 7.4
+			},
+			"image": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3032977.png&w=350&h=254"
+		}
+	]
+}
