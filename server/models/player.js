@@ -1,19 +1,29 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+
+const rString = {
+	type: String,
+	required: true,
+};
+
+const rNumber = {
+	type: Number,
+	required: true,
+};
 
 const playerSchema = new mongoose.Schema({
 	_id: mongoose.Schema.Types.ObjectId,
-	firstName: String,
-	lastName: String,
-	position: String,
-	team: String,
-	number: Number,
+	firstName: rString,
+	lastName: rString,
+	position: rString,
+	team: rString,
+	number: rNumber,
 	isCaptain: Boolean,
 	stats: {
-		pts: Number,
-		reb: Number,
-		ast: Number,
+		pts: rNumber,
+		reb: rNumber,
+		ast: rNumber,
 	},
-	image: String,
+	image: rString,
 });
 
-export default mongoose.model('Player', playerSchema);
+module.exports = mongoose.model('Player', playerSchema);

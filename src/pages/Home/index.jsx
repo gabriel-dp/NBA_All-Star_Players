@@ -24,7 +24,7 @@ function Home() {
 					/>
 				</LogoContainer>
 				<CardsContainer>
-					{data?.players.map((player) => (
+					{data?.map((player) => (
 						<PlayerCard
 							data={player}
 							key={player.firstName}
