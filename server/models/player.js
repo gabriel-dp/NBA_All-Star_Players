@@ -11,7 +11,6 @@ const rNumber = {
 };
 
 const playerSchema = new mongoose.Schema({
-	_id: mongoose.Schema.Types.ObjectId,
 	firstName: rString,
 	lastName: rString,
 	position: rString,
