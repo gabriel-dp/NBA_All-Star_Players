@@ -1,10 +1,19 @@
+import { useState, useEffect } from 'react';
+
 import PlayerCard from '../../components/PlayerCard';
 import Footer from '../../components/Footer';
-import data from '../../data/players.json';
 
 import { Screen, HomeContainer, LogoContainer, CardsContainer } from './style';
 
 function Home() {
+	const [data, setData] = useState(null);
+	useEffect(() => {
+		fetch('/api/players')
+			.then((res) => res.json())
+			.then((resData) => setData(resData))
+			.catch((err) => console.error(err));
+	}, []);
+
 	return (
 		<Screen>
 			<HomeContainer>
@@ -15,7 +24,7 @@ function Home() {
 					/>
 				</LogoContainer>
 				<CardsContainer>
-					{data.players.map((player) => (
+					{data?.players.map((player) => (
 						<PlayerCard
 							data={player}
 							key={player.firstName}
