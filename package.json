@@ -2,7 +2,6 @@
 	"name": "nba-allstar-players",
 	"private": true,
 	"version": "1.0.0",
-	"type": "module",
 	"scripts": {
 		"dev:server": "nodemon --watch \"server/\" --exec \"node server/index.js\"",
 		"dev:client": "vite",
@@ -13,6 +12,7 @@
 	},
 	"dependencies": {
 		"express": "^4.18.2",
+		"mongoose": "^6.8.2",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-router-dom": "^6.6.1",

@@ -9,7 +9,7 @@ export default ({ mode }) => {
 		plugins: [react()],
 		server: {
 			proxy: {
-				'/api/players': process.env.VITE_API_URL,
+				'/players': process.env.VITE_API_URL,
 			},
 		},
 	});

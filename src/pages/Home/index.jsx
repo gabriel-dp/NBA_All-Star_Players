@@ -8,7 +8,7 @@ import { Screen, HomeContainer, LogoContainer, CardsContainer } from './style';
 function Home() {
 	const [data, setData] = useState(null);
 	useEffect(() => {
-		fetch('/api/players')
+		fetch('/players')
 			.then((res) => res.json())
 			.then((resData) => setData(resData))
 			.catch((err) => console.error(err));
