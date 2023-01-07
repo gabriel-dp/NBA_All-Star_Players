@@ -22,7 +22,6 @@ const playerSchema = new mongoose.Schema({
 		reb: rNumber,
 		ast: rNumber,
 	},
-	image: rString,
 });
 
 module.exports = mongoose.model('Player', playerSchema);
