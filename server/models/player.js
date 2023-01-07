@@ -11,16 +11,30 @@ const rNumber = {
 };
 
 const playerSchema = new mongoose.Schema({
-	firstName: rString,
-	lastName: rString,
+	name: {
+		first: rString,
+		last: rString,
+	},
+	team: {
+		name: rString,
+		number: rNumber,
+	},
 	position: rString,
-	team: rString,
-	number: rNumber,
-	isCaptain: Boolean,
+	allStar: {
+		team: rString,
+		role: rString,
+		number: rNumber,
+	},
 	stats: {
 		pts: rNumber,
 		reb: rNumber,
 		ast: rNumber,
+	},
+	personalData: {
+		heightImperial: rString,
+		weightImperial: rNumber,
+		age: rNumber,
+		country: rString,
 	},
 });
 

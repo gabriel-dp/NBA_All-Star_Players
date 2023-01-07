@@ -28,7 +28,7 @@ function Home() {
 					{data?.map((player) => (
 						<PlayerCard
 							data={player}
-							key={player.firstName}
+							key={player.name.last}
 						/>
 					))}
 				</CardsContainer>

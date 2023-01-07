@@ -14,10 +14,10 @@ function PlayerCard({ data }) {
 				/>
 			</ImageContainer>
 			<span className="position">{data.position}</span>
-			<span className="number">{data.number}</span>
+			<span className="number">{data.team.number}</span>
 			<DescriptionContainer>
-				<span className="firstName">{data.firstName}</span>
-				<span className="lastName">{data.lastName}</span>
+				<span className="firstName">{data.name.first}</span>
+				<span className="lastName">{data.name.last}</span>
 			</DescriptionContainer>
 		</Card>
 	);
