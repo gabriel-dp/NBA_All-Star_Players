@@ -15,6 +15,7 @@ export const Card = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: flex-end;
 
 	.position {
 		font-size: 1.25rem;
@@ -55,19 +56,19 @@ export const DescriptionContainer = styled.div`
 	filter: drop-shadow(0 0 0.25rem ${({ theme }) => theme.background});
 
 	.firstName {
-		font-size: 0.9rem;
+		font-size: 1rem;
 		font-weight: bold;
 	}
 
 	.lastName {
-		font-size: 1.1rem;
+		font-size: 1.25rem;
 		font-weight: bold;
 		text-transform: uppercase;
 	}
 `;
 
 export const ImageContainer = styled.div`
-	height: 100%;
+	height: 95%;
 	width: 100%;
 	display: flex;
 	justify-content: center;

@@ -9,12 +9,11 @@ function PlayerCard({ data }) {
 		<Card>
 			<ImageContainer>
 				<img
-					alt="test"
+					alt={`headshot-${data.name.last}`}
 					src={imageUrl}
 				/>
 			</ImageContainer>
 			<span className="position">{data.position}</span>
-			<span className="number">{data.team.number}</span>
 			<DescriptionContainer>
 				<span className="firstName">{data.name.first}</span>
 				<span className="lastName">{data.name.last}</span>
