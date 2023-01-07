@@ -1,12 +1,16 @@
+import { playerHeadshotUrlWebp } from '../../utils/GitHubAssets';
+
 import { Card, DescriptionContainer, ImageContainer } from './styles';
 
 function PlayerCard({ data }) {
+	const imageUrl = playerHeadshotUrlWebp(data);
+
 	return (
 		<Card>
 			<ImageContainer>
 				<img
 					alt="test"
-					src={data.image}
+					src={imageUrl}
 				/>
 			</ImageContainer>
 			<span className="position">{data.position}</span>
