@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { allstarLogoUrlWebp } from '../../utils/GitHubAssets';
 
 import PlayerCard from '../../components/PlayerCard';
 import Footer from '../../components/Footer';
@@ -19,8 +20,8 @@ function Home() {
 			<HomeContainer>
 				<LogoContainer>
 					<img
-						alt="logo"
-						src="https://d2xpg1khvwxlf1.cloudfront.net/production/images/original/38712-AS23_Utah_dark_bg-52dc2d80ababe0d0caf4b5815003afd7.png"
+						alt="allstar-logo"
+						src={allstarLogoUrlWebp()}
 					/>
 				</LogoContainer>
 				<CardsContainer>
