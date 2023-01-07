@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { FaStar } from 'react-icons/fa';
 
 export const Card = styled.div`
 	width: min(100%, 30rem);
@@ -31,6 +32,7 @@ export const Card = styled.div`
 		width: 100%;
 		height: 100%;
 		background: linear-gradient(-2deg, ${({ theme }) => theme.background2}, transparent 35%);
+		z-index: 2;
 	}
 
 	:hover {
@@ -43,7 +45,7 @@ export const DescriptionContainer = styled.div`
 	padding: 0.8rem;
 	color: ${({ theme }) => theme.text};
 	transition: all 0.25s ease;
-	z-index: 1;
+	z-index: 2;
 
 	position: absolute;
 	bottom: 0;
@@ -67,11 +69,37 @@ export const DescriptionContainer = styled.div`
 	}
 `;
 
-export const ImageContainer = styled.div`
+export const RoleIcon = styled(FaStar)`
+	font-size: 1.5rem;
+	position: absolute;
+	left: 1.25rem;
+	top: 1rem;
+
+	display: ${(props) => (props.game_role === 'bench' ? 'none' : 'normal')};
+	color: ${({ theme }) =>
+		(props) =>
+			props.game_role === 'captain' ? theme.primary : theme.text};
+`;
+
+export const PlayerImageContainer = styled.div`
 	height: 95%;
 	width: 100%;
 	display: flex;
 	justify-content: center;
+
+	img {
+		z-index: 1;
+		height: 100%;
+		object-fit: cover;
+	}
+`;
+
+export const TeamLogoContainer = styled.div`
+	height: 90%;
+	aspect-ratio: 1;
+	opacity: 0.05;
+	position: absolute;
+	transform: translate(20%, -5%);
 
 	img {
 		height: 100%;

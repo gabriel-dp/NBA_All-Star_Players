@@ -10,6 +10,7 @@ export default ({ mode }) => {
 		server: {
 			proxy: {
 				'/players': process.env.VITE_API_URL,
+				'/teams': process.env.VITE_API_URL,
 			},
 		},
 	});

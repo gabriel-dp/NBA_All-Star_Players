@@ -1,19 +1,33 @@
-import { playerHeadshotUrlWebp } from '../../utils/GitHubAssets';
+import { playerHeadshotUrlWebp, teamLogoUrlSvg } from '../../utils/GitHubAssets';
 
-import { Card, DescriptionContainer, ImageContainer } from './styles';
+import {
+	Card,
+	DescriptionContainer,
+	PlayerImageContainer,
+	RoleIcon,
+	TeamLogoContainer,
+} from './styles';
 
-function PlayerCard({ data }) {
-	const imageUrl = playerHeadshotUrlWebp(data);
+function PlayerCard({ data, team }) {
+	const playerImageUrl = playerHeadshotUrlWebp(data);
+	const teamImageUrl = teamLogoUrlSvg(team);
 
 	return (
 		<Card>
-			<ImageContainer>
+			<PlayerImageContainer>
 				<img
 					alt={`headshot-${data.name.last}`}
-					src={imageUrl}
+					src={playerImageUrl}
 				/>
-			</ImageContainer>
+				<TeamLogoContainer>
+					<img
+						alt={`logo-${team.abv}`}
+						src={teamImageUrl}
+					/>
+				</TeamLogoContainer>
+			</PlayerImageContainer>
 			<span className="position">{data.position}</span>
+			<RoleIcon game_role={data.allStar.role} />
 			<DescriptionContainer>
 				<span className="firstName">{data.name.first}</span>
 				<span className="lastName">{data.name.last}</span>
