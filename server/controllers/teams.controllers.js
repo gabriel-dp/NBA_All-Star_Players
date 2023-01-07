@@ -1,6 +1,11 @@
 const { Types } = require('mongoose');
 const Team = require('../models/team');
 
+const checkTeamExistence = async (id) => {
+	const teamFound = await Team.find({ _id: Types.ObjectId(id) });
+	if (teamFound.length === 0) throw new Error('Team not found in database');
+};
+
 const getAllTeams = async (req, res) => {
 	try {
 		const allTeams = await Team.find().lean().exec();
@@ -25,6 +30,8 @@ const createTeam = async (req, res) => {
 const updateTeam = async (req, res) => {
 	try {
 		const { id } = req.params;
+		await checkTeamExistence(id);
+
 		const propertiers = req.body;
 		await Team.findByIdAndUpdate({ _id: Types.ObjectId(id) }, { $set: propertiers });
 
@@ -37,6 +44,8 @@ const updateTeam = async (req, res) => {
 const deleteTeam = async (req, res) => {
 	try {
 		const { id } = req.params;
+		await checkTeamExistence(id);
+
 		await Team.findByIdAndRemove({ _id: Types.ObjectId(id) });
 
 		res.status(200).send(`Team '${id}' deleted!`);
