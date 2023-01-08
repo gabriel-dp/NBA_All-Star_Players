@@ -7,6 +7,7 @@ export const FooterContainer = styled.div`
 	margin-top: 2rem;
 	position: absolute;
 	bottom: 0;
+	overflow: hidden;
 
 	display: flex;
 	justify-content: center;

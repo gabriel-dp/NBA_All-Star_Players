@@ -38,6 +38,11 @@ export const Card = styled.div`
 	:hover {
 		border: 2px solid ${({ theme }) => theme.primary};
 	}
+
+	@media screen and (max-width: 480px) {
+		width: 100%;
+		height: 12rem;
+	}
 `;
 
 export const DescriptionContainer = styled.div`

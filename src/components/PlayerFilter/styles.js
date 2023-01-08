@@ -14,6 +14,7 @@ export const FiltersList = styled.ul`
 	height: 3rem;
 	display: flex;
 	flex-direction: row;
+	justify-content: space-around;
 	gap: 5px;
 `;
 
@@ -29,6 +30,8 @@ export const FilterElement = styled.li`
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
+
+	user-select: none;
 
 	@media screen and (max-width: 767px) {
 		font-size: 0.8rem;

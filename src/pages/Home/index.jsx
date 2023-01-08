@@ -46,6 +46,7 @@ function Home() {
 					<img
 						alt="allstar-logo"
 						src={allstarLogoUrlWebp()}
+						draggable="false"
 					/>
 				</LogoContainer>
 				<PlayerFilter
