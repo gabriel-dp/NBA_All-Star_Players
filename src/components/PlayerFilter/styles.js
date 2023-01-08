@@ -42,7 +42,7 @@ export const FilterElement = styled.li`
 	:hover {
 		background-color: ${({ theme }) => theme.secondary};
 
-		span {
+		.filterElement {
 			color: ${({ theme }) => theme.background};
 		}
 
@@ -57,11 +57,15 @@ export const DropdownOptions = styled.ul`
 	opacity: 0;
 	visibility: hidden;
 	min-width: 100%;
-	background-color: ${({ theme }) => theme.secondary};
+	background-color: ${({ theme }) => theme.secondary}55;
 	border-radius: 0 0 0.5rem 0.5em;
 	padding: 0.5rem min(15%, 1rem);
 	z-index: 3;
 	list-style-type: none;
+
+	backdrop-filter: blur(1rem);
+	border: 2px solid ${({ theme }) => theme.secondary}dd;
+	filter: drop-shadow(0 1rem 0.5rem #000000aa);
 
 	position: absolute;
 	top: 100%;
@@ -74,8 +78,9 @@ export const DropdownOptions = styled.ul`
 export const Option = styled.li`
 	height: 2rem;
 	font-size: 0.9rem;
-	color: ${({ theme }) => theme.background};
 	white-space: nowrap;
+
+	color: ${({ theme }) => theme.secondary};
 
 	@media screen and (max-width: 767px) {
 		font-size: 0.75rem;
@@ -94,7 +99,7 @@ export const CheckboxInput = styled.input.attrs({
 	user-select: none;
 
 	appearance: none;
-	border: 2px solid ${({ theme }) => theme.background2};
+	border: 2px solid ${({ theme }) => theme.secondary};
 	width: 1rem;
 	height: 1rem;
 	border-radius: 0.2rem;
@@ -114,7 +119,7 @@ export const CheckboxInput = styled.input.attrs({
 
 	:checked {
 		::before {
-			background-color: ${({ theme }) => theme.background2};
+			background-color: ${({ theme }) => theme.primary};
 		}
 	}
 `;
