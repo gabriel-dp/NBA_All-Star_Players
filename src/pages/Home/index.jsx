@@ -7,17 +7,6 @@ import Footer from '../../components/Footer';
 
 import { Screen, HomeContainer, LogoContainer, CardsContainer } from './style';
 
-function playerTeam(player, teams) {
-	// Compares last name because in some teams the name is different of the original
-	// 'Los Angeles Clippers' !== 'LA Clippers'
-	const getLastName = (string) => {
-		const splitted = string.split(' ');
-		return splitted[splitted.length - 1];
-	};
-
-	return teams.find((team) => getLastName(team.name) === getLastName(player.team.name));
-}
-
 function fetchGetData(url, setState) {
 	fetch(url)
 		.then((res) => res.json())
@@ -25,35 +14,22 @@ function fetchGetData(url, setState) {
 		.catch((error) => console.error(error));
 }
 
+// Get team by last name because in some teams the name is different from original
+// 'Los Angeles Clippers' !== 'LA Clippers'
+function playerTeam(player, teams) {
+	const getLastName = (string) => string.split(' ').pop();
+	return teams.find((team) => getLastName(team.name) === getLastName(player.team.name));
+}
+
 function Home() {
 	const [allPlayers, setAllPlayers] = useState(null);
-	const [showPlayers, setShowPlayers] = useState(null);
 	const [teams, setTeams] = useState(null);
-	const [playerFilters, setPlayerFilters] = useState(null);
+	const [showPlayers, setShowPlayers] = useState(null);
 
 	useEffect(() => {
 		fetchGetData('/players', setAllPlayers);
 		fetchGetData('/teams', setTeams);
 	}, []);
-
-	useEffect(() => {
-		if (!allPlayers || !teams || !playerFilters) return;
-
-		const propertyMatches = (property, values) => {
-			if (values.length === 0) return true;
-			return values.indexOf(property) !== -1;
-		};
-
-		const filteredPlayers = allPlayers.filter(
-			(player) =>
-				playerFilters.team.length > 0 &&
-				playerTeam(player, playerFilters.team) !== undefined &&
-				propertyMatches(player.position, playerFilters.position) &&
-				propertyMatches(player.allStar.team, playerFilters.allStar)
-		);
-
-		setShowPlayers(filteredPlayers);
-	}, [allPlayers, teams, playerFilters]);
 
 	return (
 		<Screen>
@@ -66,7 +42,9 @@ function Home() {
 				</LogoContainer>
 				<PlayerFilter
 					teams={teams}
-					setPlayerFilters={setPlayerFilters}
+					playerTeam={playerTeam}
+					allPlayers={allPlayers}
+					setShowPlayers={setShowPlayers}
 				/>
 				<CardsContainer>
 					{teams &&
