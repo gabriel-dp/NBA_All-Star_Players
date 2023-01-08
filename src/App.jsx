@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
-import Router from './routes';
-import { fetchGetData, allstarThemeJson } from './utils/GitHubAssets';
 
+import { fetchGetData, allstarThemeJson } from './utils/GitHubAssets';
 import defaultTheme from './styles/defaultTheme';
 import GlobalStyle from './styles/globalStyle';
+import Router from './routes';
 
 function App() {
 	const [theme, setTheme] = useState(defaultTheme);
