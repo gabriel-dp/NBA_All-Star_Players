@@ -83,10 +83,13 @@ function PlayerFilter({ teams, playerTeam, allPlayers, setShowPlayers }) {
 							{filterOptions[filter].map((option) => (
 								<Option key={option}>
 									<CheckboxInput
+										id={`option-${option}`}
 										value={selectedFilters[filter].includes(option)}
 										onChange={() => handleChange(filter, option)}
 									/>
-									<span>{option}</span>
+									<label htmlFor={`option-${option}`}>
+										<span>{option}</span>
+									</label>
 								</Option>
 							))}
 						</DropdownOptions>
