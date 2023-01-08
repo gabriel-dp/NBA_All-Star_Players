@@ -5,7 +5,7 @@ import PlayerFilter from '../../components/PlayerFilter';
 import PlayerCard from '../../components/PlayerCard';
 import Footer from '../../components/Footer';
 
-import { Screen, HomeContainer, LogoContainer, CardsContainer } from './style';
+import { Screen, HomeContainer, LogoContainer, CardsContainer, NoResultsContainer } from './style';
 
 function fetchGetData(url, setState) {
 	fetch(url)
@@ -19,6 +19,14 @@ function fetchGetData(url, setState) {
 function playerTeam(player, teams) {
 	const getLastName = (string) => string.split(' ').pop();
 	return teams.find((team) => getLastName(team.name) === getLastName(player.team.name));
+}
+
+function NoResults() {
+	return (
+		<NoResultsContainer>
+			<span>No players match the filters</span>
+		</NoResultsContainer>
+	);
 }
 
 function Home() {
@@ -46,16 +54,19 @@ function Home() {
 					allPlayers={allPlayers}
 					setShowPlayers={setShowPlayers}
 				/>
-				<CardsContainer>
-					{teams &&
-						showPlayers?.map((player) => (
+				{teams && showPlayers?.length > 0 ? (
+					<CardsContainer>
+						{showPlayers?.map((player) => (
 							<PlayerCard
 								data={player}
 								team={playerTeam(player, teams)}
 								key={player.name.last}
 							/>
 						))}
-				</CardsContainer>
+					</CardsContainer>
+				) : (
+					<NoResults />
+				)}
 			</HomeContainer>
 			<Footer />
 		</Screen>

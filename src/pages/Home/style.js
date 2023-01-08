@@ -38,3 +38,13 @@ export const CardsContainer = styled.div`
 	gap: 1rem;
 	justify-items: center;
 `;
+
+export const NoResultsContainer = styled.div`
+	width: 100%;
+	padding: 2rem;
+	color: ${({ theme }) => theme.text};
+	text-align: center;
+
+	display: flex;
+	justify-content: center;
+`;
