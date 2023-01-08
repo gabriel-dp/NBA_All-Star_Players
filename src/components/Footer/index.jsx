@@ -1,4 +1,4 @@
-import { FooterContainer, FooterWrapper } from './style';
+import { FooterContainer, FooterWrapper } from './styles';
 
 function Footer() {
 	return (
