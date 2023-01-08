@@ -55,7 +55,9 @@ function Home() {
 					allPlayers={allPlayers}
 					setShowPlayers={setShowPlayers}
 				/>
-				{teams && showPlayers?.length > 0 ? (
+				{showPlayers?.length === 0 ? (
+					<NoResults />
+				) : (
 					<CardsContainer>
 						{showPlayers?.map((player) => (
 							<PlayerCard
@@ -65,8 +67,6 @@ function Home() {
 							/>
 						))}
 					</CardsContainer>
-				) : (
-					<NoResults />
 				)}
 			</HomeContainer>
 			<Footer />
