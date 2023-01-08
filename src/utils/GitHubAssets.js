@@ -1,3 +1,13 @@
+export function fetchGetData(url, setState) {
+	fetch(url)
+		.then((res) => res.json())
+		.then((resJson) => setState(resJson))
+		.catch((error) => console.error(error));
+}
+
+export const allstarThemeJson = () =>
+	`${import.meta.env.VITE_GITHUB_ASSETS_URL}/allstar/theme.json`;
+
 export const allstarLogoUrlWebp = () =>
 	`${import.meta.env.VITE_GITHUB_ASSETS_URL}/allstar/logo.webp`;
 

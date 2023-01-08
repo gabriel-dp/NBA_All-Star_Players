@@ -1,18 +1,11 @@
 import { useState, useEffect } from 'react';
-import { allstarLogoUrlWebp } from '../../utils/GitHubAssets';
+import { fetchGetData, allstarLogoUrlWebp } from '../../utils/GitHubAssets';
 
 import PlayerFilter from '../../components/PlayerFilter';
 import PlayerCard from '../../components/PlayerCard';
 import Footer from '../../components/Footer';
 
 import { Screen, HomeContainer, LogoContainer, CardsContainer, NoResultsContainer } from './style';
-
-function fetchGetData(url, setState) {
-	fetch(url)
-		.then((res) => res.json())
-		.then((resJson) => setState(resJson))
-		.catch((error) => console.error(error));
-}
 
 // Get team by last name because in some teams the name is different from original
 // 'Los Angeles Clippers' !== 'LA Clippers'

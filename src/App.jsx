@@ -1,12 +1,19 @@
+import { useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import Router from './routes';
+import { fetchGetData, allstarThemeJson } from './utils/GitHubAssets';
 
-import darkTheme from './styles/darkTheme';
+import defaultTheme from './styles/defaultTheme';
 import GlobalStyle from './styles/globalStyle';
 
 function App() {
+	const [theme, setTheme] = useState(defaultTheme);
+	useEffect(() => {
+		fetchGetData(allstarThemeJson(), setTheme);
+	}, []);
+
 	return (
-		<ThemeProvider theme={darkTheme}>
+		<ThemeProvider theme={theme}>
 			<GlobalStyle />
 			<Router />
 		</ThemeProvider>
