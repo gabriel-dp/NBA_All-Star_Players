@@ -10,7 +10,6 @@ const GlobalStyle = createGlobalStyle`
 
 	body {
 		background-color: ${({ theme }) => theme.background};
-		transition: background 0.25s ease;
 	}
 `;
 
