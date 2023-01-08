@@ -19,6 +19,18 @@ function PlayerFilter({ teams, playerTeam, allPlayers, setShowPlayers }) {
 	const [selectedFilters, setSelectedFilters] = useState(resetFilters);
 	const [playerFilters, setPlayerFilters] = useState(null);
 
+	// Whenever a option is (un)checkedor selectedFilters is updated
+	function handleChange(filter, option) {
+		const newFilters = { ...selectedFilters };
+
+		const index = newFilters[filter].indexOf(option);
+		if (index === -1) newFilters[filter].push(option);
+		else newFilters[filter].splice(index, 1);
+
+		setSelectedFilters(newFilters);
+	}
+
+	// "Conference" and "Division" are teamFilters, they need to be converted to "Team" playerFilter
 	useEffect(() => {
 		if (!teams) return;
 
@@ -39,14 +51,14 @@ function PlayerFilter({ teams, playerTeam, allPlayers, setShowPlayers }) {
 		});
 
 		setPlayerFilters({ ...filtersApplied, team: filteredTeams });
-	}, [selectedFilters, teams, setPlayerFilters]);
+	}, [teams, selectedFilters, setPlayerFilters]);
 
+	// When selectedFilters change, playerFilters changes too
 	useEffect(() => {
 		if (!allPlayers || !teams || !playerFilters) return;
 
 		const propertyMatches = (property, values) => {
 			if (values.length === 0) return true;
-
 			return values.some((item) => property.includes(item));
 		};
 
@@ -59,17 +71,7 @@ function PlayerFilter({ teams, playerTeam, allPlayers, setShowPlayers }) {
 		);
 
 		setShowPlayers(filteredPlayers);
-	}, [allPlayers, teams, playerFilters, setShowPlayers, playerTeam]);
-
-	function handleChange(filter, option) {
-		const newFilters = { ...selectedFilters };
-
-		const index = newFilters[filter].indexOf(option);
-		if (index === -1) newFilters[filter].push(option);
-		else newFilters[filter].splice(index, 1);
-
-		setSelectedFilters(newFilters);
-	}
+	}, [allPlayers, teams, playerFilters, playerTeam, setShowPlayers]);
 
 	return (
 		<FilterContainer>
