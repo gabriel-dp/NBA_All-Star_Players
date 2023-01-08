@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { allstarLogoUrlWebp } from '../../utils/GitHubAssets';
 
+import PlayerFilter from '../../components/PlayerFilter';
 import PlayerCard from '../../components/PlayerCard';
 import Footer from '../../components/Footer';
 
@@ -17,22 +18,42 @@ function playerTeam(player, teams) {
 	return teams.find((team) => getLastName(team.name) === getLastName(player.team.name));
 }
 
+function fetchGetData(url, setState) {
+	fetch(url)
+		.then((res) => res.json())
+		.then((resJson) => setState(resJson))
+		.catch((error) => console.error(error));
+}
+
 function Home() {
-	const [players, setPlayers] = useState(null);
+	const [allPlayers, setAllPlayers] = useState(null);
+	const [showPlayers, setShowPlayers] = useState(null);
+	const [teams, setTeams] = useState(null);
+	const [playerFilters, setPlayerFilters] = useState(null);
+
 	useEffect(() => {
-		fetch('/players')
-			.then((res) => res.json())
-			.then((resJson) => setPlayers(resJson))
-			.catch((err) => console.error(err));
+		fetchGetData('/players', setAllPlayers);
+		fetchGetData('/teams', setTeams);
 	}, []);
 
-	const [teams, setTeams] = useState(null);
 	useEffect(() => {
-		fetch('/teams')
-			.then((res) => res.json())
-			.then((resJson) => setTeams(resJson))
-			.catch((err) => console.error(err));
-	}, []);
+		if (!allPlayers || !teams || !playerFilters) return;
+
+		const propertyMatches = (property, values) => {
+			if (values.length === 0) return true;
+			return values.indexOf(property) !== -1;
+		};
+
+		const filteredPlayers = allPlayers.filter(
+			(player) =>
+				playerFilters.team.length > 0 &&
+				playerTeam(player, playerFilters.team) !== undefined &&
+				propertyMatches(player.position, playerFilters.position) &&
+				propertyMatches(player.allStar.team, playerFilters.allStar)
+		);
+
+		setShowPlayers(filteredPlayers);
+	}, [allPlayers, teams, playerFilters]);
 
 	return (
 		<Screen>
@@ -43,9 +64,13 @@ function Home() {
 						src={allstarLogoUrlWebp()}
 					/>
 				</LogoContainer>
+				<PlayerFilter
+					teams={teams}
+					setPlayerFilters={setPlayerFilters}
+				/>
 				<CardsContainer>
 					{teams &&
-						players?.map((player) => (
+						showPlayers?.map((player) => (
 							<PlayerCard
 								data={player}
 								team={playerTeam(player, teams)}
