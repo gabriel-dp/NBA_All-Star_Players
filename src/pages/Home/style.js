@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const Screen = styled.div`
 	width: 100%;
+	min-height: 100vh;
+	position: relative;
+	padding-bottom: 10rem; // Footer height
 
 	display: flex;
 	flex-direction: column;
