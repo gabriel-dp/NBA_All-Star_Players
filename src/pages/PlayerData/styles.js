@@ -9,6 +9,10 @@ export const Screen = styled.div`
 
 	display: flex;
 	justify-content: center;
+
+	* {
+		transition: all ease 0.5s;
+	}
 `;
 
 export const PlayerDataContainer = styled.div`
@@ -30,11 +34,13 @@ export const FirstSummary = styled.div`
 
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-end;
+	margin-bottom: 15rem;
 	gap: 1rem;
 
 	@media screen and (max-width: 1023px) {
 		padding: 3rem;
+		margin-bottom: 0;
 		.name {
 			text-align: center;
 		}
@@ -156,10 +162,14 @@ export const SingleStatContainer = styled.div`
 export const EndSummary = styled.div`
 	width: 100%;
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
+	margin: 1rem;
+	margin-top: 0;
 	padding: 0 1rem;
 
 	@media screen and (max-width: 1023px) {
+		margin: 0;
+
 		div {
 			align-items: center;
 		}
