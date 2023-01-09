@@ -2,21 +2,22 @@ import styled from 'styled-components';
 
 export const Screen = styled.div`
 	width: 100%;
-	min-height: 100vh;
+	height: 100vh;
 	position: relative;
 	background-color: ${({ theme }) => theme.light};
+	overflow-y: scroll;
 
 	display: flex;
 	justify-content: center;
 `;
 
 export const PlayerDataContainer = styled.div`
-	width: min(100%, 75rem);
-	height: 100vh;
+	width: min(100%, 80rem);
+	height: 100%;
 	padding: 0 2rem;
 
 	display: grid;
-	grid-template-columns: minmax(0, 1.5fr) minmax(0, 3fr) minmax(0, 2fr);
+	grid-template-columns: minmax(0, 1.5fr) 3fr minmax(0, 2fr);
 
 	@media screen and (max-width: 1023px) {
 		display: flex;
@@ -33,6 +34,7 @@ export const FirstSummary = styled.div`
 	gap: 1rem;
 
 	@media screen and (max-width: 1023px) {
+		padding: 3rem;
 		.name {
 			text-align: center;
 		}
@@ -44,7 +46,7 @@ export const FirstSummary = styled.div`
 `;
 
 export const NameContainer = styled.div`
-	color: #333;
+	color: ${(props) => props.colors.primary};
 	text-transform: uppercase;
 	font-weight: bold;
 	overflow-wrap: break-word;
@@ -64,8 +66,7 @@ export const NameContainer = styled.div`
 export const DetailsContainer = styled.div`
 	font-size: 1rem;
 	font-weight: bold;
-	color: #333;
-
+	color: ${(props) => props.colors.primary};
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
@@ -88,7 +89,7 @@ export const PlayerImageContainer = styled.div`
 	justify-content: flex-end;
 
 	img {
-		width: max(100%, 25rem);
+		width: max(100%, 30rem);
 	}
 
 	@media screen and (max-width: 1023px) {
@@ -96,18 +97,19 @@ export const PlayerImageContainer = styled.div`
 		flex-direction: column;
 
 		img {
-			height: 30rem;
-			width: auto;
+			width: min(90%, 30rem);
 		}
 	}
 `;
 
 export const StatsContainer = styled.div`
-	width: 100%;
+	width: min(100%, 25srem);
 	height: 6rem;
 
 	position: absolute;
 	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
 
 	display: flex;
 	flex-direction: row;
@@ -119,11 +121,14 @@ export const StatsContainer = styled.div`
 export const SingleStatContainer = styled.div`
 	height: 90%;
 	aspect-ratio: 1.25;
-	background-color: red;
+	color: ${(props) => props.colors.primary};
+	background-color: ${(props) => props.colors.secondary};
+	border: 1px solid ${({ theme }) => theme.light};
 	border-radius: 1rem;
 	font-weight: bold;
 	font-size: 0.8rem;
 	padding-top: 0.5rem;
+	filter: drop-shadow(0 0 0.5rem #00000077);
 
 	display: flex;
 	flex-direction: column;
@@ -137,9 +142,14 @@ export const SingleStatContainer = styled.div`
 	}
 
 	&.mainStat {
-		background-color: cyan;
 		height: 100%;
 		aspect-ratio: 1.5;
+		background-color: ${(props) => props.colors.primary};
+		color: ${(props) => props.colors.secondary};
+
+		.number {
+			font-size: 2rem;
+		}
 	}
 `;
 
@@ -147,6 +157,7 @@ export const EndSummary = styled.div`
 	width: 100%;
 	display: flex;
 	align-items: center;
+	padding: 0 1rem;
 
 	@media screen and (max-width: 1023px) {
 		div {
@@ -157,6 +168,11 @@ export const EndSummary = styled.div`
 
 export const PlayerProfileContainer = styled.div`
 	width: 100%;
+	background-color: ${(props) => props.colors.primary};
+	color: ${(props) => props.colors.secondary};
+	padding: 2rem;
+	border-radius: 1rem;
+	filter: drop-shadow(0 0.25rem 0.5rem #00000077);
 
 	display: flex;
 	flex-direction: column;
