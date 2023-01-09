@@ -14,4 +14,7 @@ export const allstarLogoUrlWebp = () => `${BASE_URL}/allstar/logo.webp`;
 export const playerHeadshotUrlWebp = (player) =>
 	`${BASE_URL}/players/headshot/${player.name.first}-${player.name.last}.webp`;
 
+export const playerProfileUrlPng = (player) =>
+	`${BASE_URL}/players/profile/${player.name.first}-${player.name.last}.png`;
+
 export const teamLogoUrlSvg = (team) => `${BASE_URL}/teams/logo/${team.abbreviation}.svg`;

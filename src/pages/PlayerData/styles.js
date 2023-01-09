@@ -10,7 +10,7 @@ export const Screen = styled.div`
 	justify-content: center;
 
 	* {
-		transition: all ease 0.5s;
+		transition: all ease 0.2s;
 	}
 
 	@media screen and (max-width: 1023px) {
@@ -24,7 +24,8 @@ export const PlayerDataContainer = styled.div`
 	padding: 0 2rem;
 
 	display: grid;
-	grid-template-columns: minmax(0, 1.5fr) 3fr minmax(0, 2fr);
+	grid-template-columns: minmax(0, 1fr) minmax(0, 2.5fr) minmax(0, 1fr);
+	grid-template-rows: minmax(0, 1fr);
 
 	@media screen and (max-width: 1023px) {
 		display: flex;
@@ -33,17 +34,18 @@ export const PlayerDataContainer = styled.div`
 `;
 
 export const FirstSummary = styled.div`
+	height: 100%;
 	text-align: right;
 
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
-	margin-bottom: 15rem;
+	padding-bottom: 15rem;
 	gap: 1rem;
 
 	@media screen and (max-width: 1023px) {
-		padding: 3rem;
-		margin-bottom: 0;
+		height: auto;
+		padding: 3rem 0;
 		.name {
 			text-align: center;
 		}
@@ -84,47 +86,59 @@ export const DetailsContainer = styled.div`
 
 export const MidSummary = styled.div`
 	width: 100%;
+	height: 100%;
 	position: relative;
+
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+
+	@media screen and (max-width: 1023px) {
+		height: max(25rem, 50vw);
+	}
 `;
 
 export const TeamLogoContainer = styled.div`
-	width: min(100%, 40rem);
-	height: min(100%, 30rem);
-	margin-bottom: min(10rem, 10vw);
+	width: 100%;
+	height: min(100%, 25rem);
 	transition: none;
+	z-index: 0;
 
 	position: absolute;
-	bottom: 0;
+	top: 50%;
 	left: 50%;
-	transform: translate(-50%, 0);
+	transform: translate(-50%, -50%);
 
 	img {
+		height: 100%;
+		width: 100%;
 		opacity: 0.2;
+		object-fit: contain;
+	}
+
+	@media screen and (max-width: 1023px) {
+		height: min(100%, 30rem);
 	}
 `;
 
 export const PlayerImageContainer = styled.div`
-	width: 100%;
-	height: 100%;
-	aspect-ratio: 2rem;
+	height: min(100%, 35rem);
+	max-width: 100%;
+	padding: 0 1rem;
 
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-end;
+	align-items: flex-end;
 
 	img {
 		z-index: 1;
-		width: max(100%, 30rem);
+		max-height: 100%;
+		max-width: 100%;
+		object-fit: contain;
+		vertical-align: bottom;
 	}
 
 	@media screen and (max-width: 1023px) {
-		display: flex;
-		flex-direction: column;
-
-		img {
-			width: min(90%, 30rem);
-		}
+		height: min(35rem, 100%);
 	}
 `;
 
@@ -155,12 +169,11 @@ export const SingleStatContainer = styled.div`
 	width: min(20vw, 100%);
 	color: ${(props) => props.colors.primary};
 	background-color: ${(props) => props.colors.secondary};
-	border: 1px solid ${({ theme }) => theme.light};
+	border: 1px solid ${(props) => props.colors.primary};
 	border-radius: 1rem;
 	font-weight: bold;
 	font-size: 0.8rem;
 	padding-top: 0.5rem;
-	filter: drop-shadow(0 0 0.5rem #00000077);
 
 	display: flex;
 	flex-direction: column;
@@ -178,6 +191,7 @@ export const SingleStatContainer = styled.div`
 		width: min(25vw, 90%);
 		aspect-ratio: 1.5;
 		background-color: ${(props) => props.colors.primary};
+		border: 1px solid ${(props) => props.colors.secondary};
 		color: ${(props) => props.colors.secondary};
 
 		.number {
@@ -202,12 +216,10 @@ export const EndSummary = styled.div`
 	width: 100%;
 	display: flex;
 	align-items: flex-end;
-	margin: 1rem;
-	margin-top: 0;
-	padding: 0 1rem;
+	padding: 1rem;
 
 	@media screen and (max-width: 1023px) {
-		margin: 0;
+		padding-top: 0;
 
 		div {
 			align-items: center;
@@ -221,7 +233,7 @@ export const PlayerProfileContainer = styled.div`
 	color: ${(props) => props.colors.secondary};
 	padding: 2rem;
 	border-radius: 1rem;
-	filter: drop-shadow(0 0.25rem 0.5rem #00000077);
+	filter: drop-shadow(0 0 0.5rem #00000077);
 
 	display: flex;
 	flex-direction: column;

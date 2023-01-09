@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { fetchGetData, teamLogoUrlSvg } from '../../utils/GitHubAssets';
+import { fetchGetData, playerProfileUrlPng, teamLogoUrlSvg } from '../../utils/GitHubAssets';
 
 import {
 	Screen,
@@ -65,7 +65,7 @@ function PlayerData() {
 						<PlayerImageContainer>
 							<img
 								alt={playerData.name.last}
-								src="\src\pages\PlayerData\playerImage.png"
+								src={playerProfileUrlPng(playerData)}
 							/>
 						</PlayerImageContainer>
 						<StatsContainer>
