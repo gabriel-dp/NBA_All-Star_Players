@@ -5,13 +5,16 @@ export const Screen = styled.div`
 	height: 100vh;
 	position: relative;
 	background-color: ${({ theme }) => theme.light};
-	overflow-y: scroll;
 
 	display: flex;
 	justify-content: center;
 
 	* {
 		transition: all ease 0.5s;
+	}
+
+	@media screen and (max-width: 1023px) {
+		overflow-y: scroll;
 	}
 `;
 
@@ -84,6 +87,22 @@ export const MidSummary = styled.div`
 	position: relative;
 `;
 
+export const TeamLogoContainer = styled.div`
+	width: min(100%, 40rem);
+	height: min(100%, 30rem);
+	margin-bottom: min(10rem, 10vw);
+	transition: none;
+
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+
+	img {
+		opacity: 0.2;
+	}
+`;
+
 export const PlayerImageContainer = styled.div`
 	width: 100%;
 	height: 100%;
@@ -95,6 +114,7 @@ export const PlayerImageContainer = styled.div`
 	justify-content: flex-end;
 
 	img {
+		z-index: 1;
 		width: max(100%, 30rem);
 	}
 
@@ -109,8 +129,10 @@ export const PlayerImageContainer = styled.div`
 `;
 
 export const StatsContainer = styled.div`
-	width: min(100%, 25srem);
+	width: min(100%, 25rem);
 	height: 6rem;
+	margin-bottom: 1rem;
+	z-index: 2;
 
 	position: absolute;
 	bottom: 0;
@@ -121,12 +143,16 @@ export const StatsContainer = styled.div`
 	flex-direction: row;
 	align-items: flex-end;
 	justify-content: space-evenly;
-	gap: 1rem;
+	gap: 0.75rem;
+
+	@media screen and (max-width: 1023px) {
+		margin-bottom: 0;
+	}
 `;
 
 export const SingleStatContainer = styled.div`
-	height: 90%;
-	aspect-ratio: 1.25;
+	height: min(20vw, 90%);
+	width: min(20vw, 100%);
 	color: ${(props) => props.colors.primary};
 	background-color: ${(props) => props.colors.secondary};
 	border: 1px solid ${({ theme }) => theme.light};
@@ -148,13 +174,26 @@ export const SingleStatContainer = styled.div`
 	}
 
 	&.mainStat {
-		height: 100%;
+		height: min(25vw, 100%);
+		width: min(25vw, 90%);
 		aspect-ratio: 1.5;
 		background-color: ${(props) => props.colors.primary};
 		color: ${(props) => props.colors.secondary};
 
 		.number {
 			font-size: 2rem;
+		}
+	}
+
+	@media screen and (max-width: 1023px) {
+		.number {
+			font-size: 1rem;
+		}
+
+		&.mainStat {
+			.number {
+				font-size: 1.5rem;
+			}
 		}
 	}
 `;
