@@ -170,7 +170,8 @@ export const SingleStatContainer = styled.div`
 	color: ${(props) => props.colors.primary};
 	background-color: ${(props) => props.colors.secondary};
 	border: 1px solid ${(props) => props.colors.primary};
-	border-radius: 1rem;
+	filter: drop-shadow(0 0 0.5rem ${(props) => props.colors.secondary}aa);
+	border-radius: 0.75rem;
 	font-weight: bold;
 	font-size: 0.8rem;
 	padding-top: 0.5rem;
@@ -234,6 +235,7 @@ export const PlayerProfileContainer = styled.div`
 	padding: 2rem;
 	border-radius: 1rem;
 	filter: drop-shadow(0 0 0.5rem #00000077);
+	z-index: 2;
 
 	display: flex;
 	flex-direction: column;
