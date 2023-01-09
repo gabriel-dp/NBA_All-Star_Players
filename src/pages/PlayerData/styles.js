@@ -139,6 +139,7 @@ export const PlayerImageContainer = styled.div`
 
 	@media screen and (max-width: 1023px) {
 		height: min(35rem, 100%);
+		transform: translate(0, 1rem); //hide image bottom corners
 	}
 `;
 
@@ -200,7 +201,7 @@ export const SingleStatContainer = styled.div`
 		}
 	}
 
-	@media screen and (max-width: 1023px) {
+	@media screen and (max-width: 767px) {
 		.number {
 			font-size: 1rem;
 		}
