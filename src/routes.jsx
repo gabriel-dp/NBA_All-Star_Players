@@ -1,6 +1,7 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
+import PlayerData from './pages/PlayerData';
 
 function Router() {
 	return (
@@ -10,6 +11,11 @@ function Router() {
 					path="/"
 					exact
 					element={<Home />}
+				/>
+				<Route
+					path="/:name"
+					exact
+					element={<PlayerData />}
 				/>
 			</Routes>
 		</HashRouter>

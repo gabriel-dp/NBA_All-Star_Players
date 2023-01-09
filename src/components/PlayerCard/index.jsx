@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { playerHeadshotUrlWebp, teamLogoUrlSvg } from '../../utils/GitHubAssets';
 
 import {
@@ -11,9 +12,13 @@ import {
 function PlayerCard({ data, team }) {
 	const playerImageUrl = playerHeadshotUrlWebp(data);
 	const teamImageUrl = teamLogoUrlSvg(team);
+	const link = `./${data.name.first.toLowerCase()}-${data.name.last.toLowerCase()}`;
+
+	const navigate = useNavigate();
+	const handleClick = () => navigate(link);
 
 	return (
-		<Card>
+		<Card onClick={() => handleClick()}>
 			<PlayerImageContainer>
 				<img
 					alt={`headshot-${data.name.last}`}

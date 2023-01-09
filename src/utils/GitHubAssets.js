@@ -5,16 +5,13 @@ export function fetchGetData(url, setState) {
 		.catch((error) => console.error(error));
 }
 
-export const allstarThemeJson = () =>
-	`${import.meta.env.VITE_GITHUB_ASSETS_URL}/allstar/theme.json`;
+const BASE_URL = import.meta.env.VITE_GITHUB_ASSETS_URL;
 
-export const allstarLogoUrlWebp = () =>
-	`${import.meta.env.VITE_GITHUB_ASSETS_URL}/allstar/logo.webp`;
+export const allstarThemeJson = () => `${BASE_URL}/allstar/theme.json`;
+
+export const allstarLogoUrlWebp = () => `${BASE_URL}/allstar/logo.webp`;
 
 export const playerHeadshotUrlWebp = (player) =>
-	`${
-		import.meta.env.VITE_GITHUB_ASSETS_URL
-	}/players/headshot/${player.name.first.toLowerCase()}-${player.name.last.toLowerCase()}.webp`;
+	`${BASE_URL}/players/headshot/${player.name.first}-${player.name.last}.webp`;
 
-export const teamLogoUrlSvg = (team) =>
-	`${import.meta.env.VITE_GITHUB_ASSETS_URL}/teams/logo/${team.abbreviation}.svg`;
+export const teamLogoUrlSvg = (team) => `${BASE_URL}/teams/logo/${team.abbreviation}.svg`;

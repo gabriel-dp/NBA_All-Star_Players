@@ -10,6 +10,7 @@ export const Card = styled.div`
 	overflow: hidden;
 	position: relative;
 	user-select: none;
+	cursor: pointer;
 	transition: all 0.25s ease;
 	border: 5px solid transparent;
 
@@ -49,6 +50,7 @@ export const DescriptionContainer = styled.div`
 	width: 100%;
 	padding: 0.8rem;
 	color: ${({ theme }) => theme.text};
+	text-transform: uppercase;
 	transition: all 0.25s ease;
 	z-index: 2;
 
