@@ -16,6 +16,20 @@ const getAllTeams = async (req, res) => {
 	}
 };
 
+const getTeam = async (req, res) => {
+	try {
+		// teamName is received as "City-Team" ex: "Los-Angeles-Lakers"
+		const { teamName } = req.params;
+		const teamNameFixed = teamName.replace('-', ' ');
+
+		const team = await Team.findOne({ name: teamNameFixed }).lean().exec();
+
+		res.status(200).send(team);
+	} catch (error) {
+		res.status(500).send(`ERROR at GET getTeam - ${error}`);
+	}
+};
+
 const createTeam = async (req, res) => {
 	try {
 		const data = req.body;
@@ -54,4 +68,4 @@ const deleteTeam = async (req, res) => {
 	}
 };
 
-module.exports = { getAllTeams, createTeam, deleteTeam, updateTeam };
+module.exports = { getAllTeams, getTeam, createTeam, deleteTeam, updateTeam };
