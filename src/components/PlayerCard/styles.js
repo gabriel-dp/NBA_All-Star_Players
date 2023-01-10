@@ -39,6 +39,7 @@ export const Card = styled.div`
 
 	:hover {
 		border: 2px solid ${({ theme }) => theme.primary};
+		filter: drop-shadow(0 0 0.5rem ${({ theme }) => theme.primary}aa);
 	}
 
 	@media screen and (max-width: 480px) {

@@ -60,12 +60,14 @@ function PlayerData() {
 							<img
 								alt={teamData.abbreviation}
 								src={teamLogoUrlSvg(teamData)}
+								draggable="false"
 							/>
 						</TeamLogoContainer>
 						<PlayerImageContainer>
 							<img
 								alt={playerData.name.last}
 								src={playerProfileUrlPng(playerData)}
+								draggable="false"
 							/>
 						</PlayerImageContainer>
 						<StatsContainer>

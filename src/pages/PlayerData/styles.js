@@ -4,7 +4,7 @@ export const Screen = styled.div`
 	width: 100%;
 	height: 100vh;
 	position: relative;
-	background-color: ${({ theme }) => theme.light};
+	background-color: #bbb;
 
 	display: flex;
 	justify-content: center;
@@ -26,6 +26,10 @@ export const PlayerDataContainer = styled.div`
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) minmax(0, 2.5fr) minmax(0, 1fr);
 	grid-template-rows: minmax(0, 1fr);
+
+	* {
+		user-select: none;
+	}
 
 	@media screen and (max-width: 1023px) {
 		display: flex;
@@ -65,6 +69,12 @@ export const NameContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 
+	* {
+		:hover {
+			letter-spacing: 0.25rem;
+		}
+	}
+
 	.first {
 		font-size: 4rem;
 	}
@@ -82,6 +92,10 @@ export const DetailsContainer = styled.div`
 	flex-direction: row;
 	justify-content: flex-end;
 	gap: 1rem;
+
+	:hover {
+		letter-spacing: 0.1rem;
+	}
 `;
 
 export const MidSummary = styled.div`
@@ -125,6 +139,7 @@ export const PlayerImageContainer = styled.div`
 	height: min(100%, 35rem);
 	max-width: 100%;
 	padding: 0 1rem;
+	filter: drop-shadow(0 0.5rem 0.5rem #00000077);
 
 	display: flex;
 	align-items: flex-end;
@@ -171,7 +186,6 @@ export const SingleStatContainer = styled.div`
 	color: ${(props) => props.colors.primary};
 	background-color: ${(props) => props.colors.secondary};
 	border: 1px solid ${(props) => props.colors.primary};
-	filter: drop-shadow(0 0 0.5rem ${(props) => props.colors.secondary}aa);
 	border-radius: 0.75rem;
 	font-weight: bold;
 	font-size: 0.8rem;
@@ -185,6 +199,10 @@ export const SingleStatContainer = styled.div`
 	.number {
 		font-size: 2.5rem;
 		font-weight: normal;
+	}
+
+	:hover {
+		filter: drop-shadow(0 0 0.5rem ${(props) => props.colors.secondary}aa);
 	}
 
 	&.mainStat {

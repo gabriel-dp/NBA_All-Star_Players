@@ -17,8 +17,7 @@ export const FooterWrapper = styled.div`
 	width: min(100%, 75rem);
 	padding: 2rem;
 	font-size: 0.85rem;
-	color: ${({ theme }) => theme.text};
-	opacity: 0.6;
+	color: ${({ theme }) => theme.text}99;
 	text-align: center;
 
 	display: flex;
@@ -28,6 +27,11 @@ export const FooterWrapper = styled.div`
 	gap: 0.5rem;
 
 	a {
+		transition: color 0.25s ease;
 		color: inherit;
+
+		:hover {
+			color: ${({ theme }) => theme.primary};
+		}
 	}
 `;

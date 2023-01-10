@@ -25,6 +25,7 @@ export const FilterElement = styled.li`
 	border-radius: 0.5rem 0.5rem 0 0;
 	gap: 0.5rem;
 	position: relative;
+	z-index: 3;
 
 	display: flex;
 	flex-direction: row;
@@ -63,10 +64,9 @@ export const DropdownOptions = styled.ul`
 	opacity: 0;
 	visibility: hidden;
 	min-width: 100%;
-	background-color: ${({ theme }) => theme.secondary}55;
+	background-color: ${({ theme }) => theme.secondary}66;
 	border-radius: 0 0 0.5rem 0.5em;
 	padding: 0.5rem min(15%, 1rem);
-	z-index: 3;
 	list-style-type: none;
 
 	backdrop-filter: blur(1rem);
