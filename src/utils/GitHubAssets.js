@@ -17,4 +17,7 @@ export const playerHeadshotUrl = (player) =>
 export const playerProfileUrl = (player) =>
 	`${BASE_URL}/players/profile/${player.name.first}-${player.name.last}.webp`;
 
+export const playerSignatureUrl = (player) =>
+	`${BASE_URL}/players/signature/${player.name.first}-${player.name.last}.webp`;
+
 export const teamLogoUrl = (team) => `${BASE_URL}/teams/logo/${team.abbreviation}.svg`;

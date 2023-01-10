@@ -307,5 +307,19 @@ export const PersonalDataItem = styled.div`
 
 export const SignatureContainer = styled.div`
 	width: 100%;
-	height: 5rem;
+	height: 3rem;
+	margin-top: 0.5rem;
+	filter: opacity(50%) drop-shadow(0 0 1px ${(props) => props.colors.secondary})
+		drop-shadow(0 0 0 ${(props) => props.colors.secondary})
+		drop-shadow(0 0 0 ${(props) => props.colors.secondary})
+		drop-shadow(0 0 0 ${(props) => props.colors.secondary});
+
+	display: flex;
+	justify-content: center;
+
+	img {
+		max-height: 100%;
+		max-width: 100%;
+		object-fit: contain;
+	}
 `;

@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { fetchGetData, playerProfileUrl, teamLogoUrl } from '../../utils/GitHubAssets';
+import {
+	fetchGetData,
+	playerProfileUrl,
+	teamLogoUrl,
+	playerSignatureUrl,
+} from '../../utils/GitHubAssets';
 
 import {
 	Screen,
@@ -103,7 +108,13 @@ function PlayerData() {
 									<hr />
 								</PersonalDataItem>
 							))}
-							<SignatureContainer />
+							<SignatureContainer colors={teamData.colors}>
+								<img
+									alt={`${playerData.name.last}-signature`}
+									src={playerSignatureUrl(playerData)}
+									draggable="false"
+								/>
+							</SignatureContainer>
 						</PlayerProfileContainer>
 					</EndSummary>
 				</PlayerDataContainer>
