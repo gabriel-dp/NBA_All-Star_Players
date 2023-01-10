@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { playerHeadshotUrlWebp, teamLogoUrlSvg } from '../../utils/GitHubAssets';
+import { playerHeadshotUrl, teamLogoUrl } from '../../utils/GitHubAssets';
 
 import {
 	Card,
@@ -10,8 +10,8 @@ import {
 } from './styles';
 
 function PlayerCard({ data, team }) {
-	const playerImageUrl = playerHeadshotUrlWebp(data);
-	const teamImageUrl = teamLogoUrlSvg(team);
+	const playerImageUrl = playerHeadshotUrl(data);
+	const teamImageUrl = teamLogoUrl(team);
 	const link = `./${data.name.first.toLowerCase()}-${data.name.last.toLowerCase()}`;
 
 	const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { fetchGetData, allstarLogoUrlWebp } from '../../utils/GitHubAssets';
+import { fetchGetData, allstarLogoUrl } from '../../utils/GitHubAssets';
 import PlayerFilter from '../../components/PlayerFilter';
 import PlayerCard from '../../components/PlayerCard';
 import Footer from '../../components/Footer';
@@ -38,7 +38,7 @@ function Home() {
 				<LogoContainer>
 					<img
 						alt="allstar-logo"
-						src={allstarLogoUrlWebp()}
+						src={allstarLogoUrl()}
 						draggable="false"
 					/>
 				</LogoContainer>
