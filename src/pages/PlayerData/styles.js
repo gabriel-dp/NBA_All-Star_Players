@@ -224,6 +224,9 @@ export const SingleStatContainer = styled.div`
 
 	:hover {
 		filter: drop-shadow(0 0 0.5rem ${(props) => props.colors.secondary}aa);
+		span {
+			letter-spacing: 0.15rem;
+		}
 	}
 
 	&.mainStat {
@@ -263,6 +266,7 @@ export const EndSummary = styled.div`
 
 		div {
 			align-items: center;
+			text-align: center;
 		}
 	}
 `;
@@ -270,14 +274,38 @@ export const EndSummary = styled.div`
 export const PlayerProfileContainer = styled.div`
 	width: 100%;
 	background-color: ${(props) => props.colors.primary};
-	color: ${(props) => props.colors.secondary};
 	padding: 2rem;
 	border-radius: 1rem;
 	filter: drop-shadow(0 0 0.5rem #00000077);
 	z-index: 2;
 
+	* {
+		color: ${(props) => props.colors.secondary};
+		border-color: ${(props) => props.colors.secondary};
+	}
+
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 1rem;
+`;
+
+export const PersonalDataItem = styled.div`
+	width: 100%;
+	font-size: 1rem;
+
+	p {
+		font-size: 2rem;
+		text-transform: uppercase;
+		margin-bottom: 0.25rem;
+	}
+
+	hr {
+		margin-top: 0.75rem;
+	}
+`;
+
+export const SignatureContainer = styled.div`
+	width: 100%;
+	height: 5rem;
 `;

@@ -17,6 +17,8 @@ import {
 	SingleStatContainer,
 	EndSummary,
 	PlayerProfileContainer,
+	PersonalDataItem,
+	SignatureContainer,
 } from './styles';
 
 function PlayerData() {
@@ -94,10 +96,14 @@ function PlayerData() {
 					</MidSummary>
 					<EndSummary>
 						<PlayerProfileContainer colors={teamData.colors}>
-							<span>Height - {playerData.personalData.heightImperial}</span>
-							<span>Weight - {playerData.personalData.weightImperial}</span>
-							<span>Age - {playerData.personalData.age}</span>
-							<span>Country - {playerData.personalData.country}</span>
+							{Object.keys(playerData.personalData).map((info) => (
+								<PersonalDataItem key={info}>
+									<p>{info}</p>
+									<span>{playerData.personalData[info]}</span>
+									<hr />
+								</PersonalDataItem>
+							))}
+							<SignatureContainer />
 						</PlayerProfileContainer>
 					</EndSummary>
 				</PlayerDataContainer>
