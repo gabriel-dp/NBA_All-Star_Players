@@ -31,8 +31,8 @@ const playerSchema = new mongoose.Schema({
 		ast: rNumber,
 	},
 	personalData: {
-		heightImperial: rString,
-		weightImperial: rNumber,
+		height: rString,
+		weight: rString,
 		age: rNumber,
 		country: rString,
 	},
