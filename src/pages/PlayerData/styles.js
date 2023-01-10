@@ -4,7 +4,7 @@ export const Screen = styled.div`
 	width: 100%;
 	height: 100vh;
 	position: relative;
-	background-color: #bbb;
+	background-color: ${({ theme }) => theme.light};
 
 	display: flex;
 	justify-content: center;
@@ -117,6 +117,7 @@ export const TeamLogoContainer = styled.div`
 	height: min(100%, 25rem);
 	transition: none;
 	z-index: 0;
+	filter: blur(1px);
 
 	position: absolute;
 	top: 50%;
@@ -126,12 +127,32 @@ export const TeamLogoContainer = styled.div`
 	img {
 		height: 100%;
 		width: 100%;
-		opacity: 0.2;
+		opacity: 0.15;
 		object-fit: contain;
 	}
 
 	@media screen and (max-width: 1023px) {
 		height: min(100%, 30rem);
+	}
+`;
+
+export const NumberContainer = styled.div`
+	font-size: 5rem;
+	color: ${(props) => props.colors.primary};
+	-webkit-text-stroke: 1px ${({ theme }) => theme.light};
+
+	position: absolute;
+	left: 2rem;
+	bottom: 20rem;
+
+	@media screen and (max-width: 1023px) {
+		left: auto;
+		bottom: 15rem;
+		right: 10%;
+	}
+
+	:hover {
+		letter-spacing: 0.25rem;
 	}
 `;
 

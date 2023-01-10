@@ -4,7 +4,7 @@ const defaultTheme = {
 	text: '#dddddd',
 	primary: '#555555',
 	secondary: '#aaaaaa',
-	light: '#dddddd',
+	light: '#bbbbbb',
 };
 
 export default defaultTheme;

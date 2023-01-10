@@ -11,6 +11,7 @@ import {
 	DetailsContainer,
 	MidSummary,
 	TeamLogoContainer,
+	NumberContainer,
 	PlayerImageContainer,
 	StatsContainer,
 	SingleStatContainer,
@@ -70,6 +71,9 @@ function PlayerData() {
 								draggable="false"
 							/>
 						</PlayerImageContainer>
+						<NumberContainer colors={teamData.colors}>
+							<p>#{playerData.team.number}</p>
+						</NumberContainer>
 						<StatsContainer>
 							<SingleStatContainer colors={teamData.colors}>
 								<p className="number">{playerData.stats.reb}</p>
