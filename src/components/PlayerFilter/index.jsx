@@ -78,7 +78,7 @@ function PlayerFilter({ teams, playerTeam, allPlayers, setShowPlayers }) {
 			<FiltersList>
 				{Object.keys(filterOptions).map((filter) => (
 					<FilterElement key={filter}>
-						<span className="filterElement">{filter}</span>
+						<p className="filterElement">{filter}</p>
 						<DropdownOptions>
 							{filterOptions[filter].map((option) => (
 								<Option key={option}>

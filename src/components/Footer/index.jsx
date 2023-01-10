@@ -4,8 +4,8 @@ function Footer() {
 	return (
 		<FooterContainer>
 			<FooterWrapper>
-				<p>This is a unofficial and non-profit project</p>
-				<p>
+				<span>This is a unofficial and non-profit project</span>
+				<span>
 					Made with love and work by&nbsp;
 					<a
 						target="_blank"
@@ -15,7 +15,7 @@ function Footer() {
 						Gabriel de Paula
 					</a>
 					.
-				</p>
+				</span>
 				<a
 					target="_blank"
 					rel="noreferrer"

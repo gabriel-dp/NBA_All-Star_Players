@@ -41,8 +41,8 @@ function PlayerData() {
 							className="name"
 							colors={teamData.colors}
 						>
-							<span className="first">{playerData.name.first}</span>
-							<span className="last">{playerData.name.last}</span>
+							<p className="first">{playerData.name.first}</p>
+							<p className="last">{playerData.name.last}</p>
 						</NameContainer>
 						<DetailsContainer
 							className="details"
@@ -70,18 +70,18 @@ function PlayerData() {
 						</PlayerImageContainer>
 						<StatsContainer>
 							<SingleStatContainer colors={teamData.colors}>
-								<span className="number">{playerData.stats.reb}</span>
+								<p className="number">{playerData.stats.reb}</p>
 								<span>REB</span>
 							</SingleStatContainer>
 							<SingleStatContainer
 								className="mainStat"
 								colors={teamData.colors}
 							>
-								<span className="number">{playerData.stats.pts}</span>
+								<p className="number">{playerData.stats.pts}</p>
 								<span>PTS</span>
 							</SingleStatContainer>
 							<SingleStatContainer colors={teamData.colors}>
-								<span className="number">{playerData.stats.ast}</span>
+								<p className="number">{playerData.stats.ast}</p>
 								<span>AST</span>
 							</SingleStatContainer>
 						</StatsContainer>

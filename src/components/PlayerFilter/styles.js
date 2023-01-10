@@ -11,7 +11,7 @@ export const FilterContainer = styled.div`
 `;
 
 export const FiltersList = styled.ul`
-	height: 3rem;
+	height: 4rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
@@ -33,13 +33,16 @@ export const FilterElement = styled.li`
 
 	user-select: none;
 
-	@media screen and (max-width: 767px) {
-		font-size: 0.8rem;
+	p {
+		font-size: 2rem;
+		color: ${({ theme }) => theme.text};
+		text-transform: uppercase;
 	}
 
-	span {
-		color: ${({ theme }) => theme.text};
-		text-transform: capitalize;
+	@media screen and (max-width: 767px) {
+		p {
+			font-size: 1.5rem;
+		}
 	}
 
 	:hover {

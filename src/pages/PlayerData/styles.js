@@ -59,18 +59,18 @@ export const FirstSummary = styled.div`
 export const NameContainer = styled.div`
 	color: ${(props) => props.colors.primary};
 	text-transform: uppercase;
-	font-weight: bold;
+	font-family: 'NBA';
 	overflow-wrap: break-word;
 
 	display: flex;
 	flex-direction: column;
 
 	.first {
-		font-size: 2rem;
+		font-size: 4rem;
 	}
 
 	.last {
-		font-size: 2.5rem;
+		font-size: 5rem;
 	}
 `;
 
@@ -175,7 +175,6 @@ export const SingleStatContainer = styled.div`
 	border-radius: 0.75rem;
 	font-weight: bold;
 	font-size: 0.8rem;
-	padding-top: 0.5rem;
 
 	display: flex;
 	flex-direction: column;
@@ -184,7 +183,7 @@ export const SingleStatContainer = styled.div`
 	gap: 0.25rem;
 
 	.number {
-		font-size: 1.75rem;
+		font-size: 2.5rem;
 		font-weight: normal;
 	}
 
@@ -197,18 +196,18 @@ export const SingleStatContainer = styled.div`
 		color: ${(props) => props.colors.secondary};
 
 		.number {
-			font-size: 2rem;
+			font-size: 3.5rem;
 		}
 	}
 
 	@media screen and (max-width: 767px) {
 		.number {
-			font-size: 1rem;
+			font-size: 2rem;
 		}
 
 		&.mainStat {
 			.number {
-				font-size: 1.5rem;
+				font-size: 3rem;
 			}
 		}
 	}

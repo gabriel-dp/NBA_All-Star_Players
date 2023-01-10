@@ -23,8 +23,9 @@ export const Card = styled.div`
 		font-size: 1.25rem;
 		font-weight: bold;
 		position: absolute;
-		right: 1.25rem;
+		right: 1rem;
 		top: 1rem;
+		letter-spacing: 0.25rem;
 	}
 
 	::before {
@@ -64,13 +65,9 @@ export const DescriptionContainer = styled.div`
 
 	filter: drop-shadow(0 0 0.25rem ${({ theme }) => theme.background});
 
-	.firstName {
-		font-size: 1rem;
-		font-weight: bold;
-	}
-
 	.lastName {
-		font-size: 1.25rem;
+		font-size: 2rem;
+		letter-spacing: 0.1rem;
 		font-weight: bold;
 		text-transform: uppercase;
 	}

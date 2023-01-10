@@ -34,8 +34,7 @@ function PlayerCard({ data, team }) {
 			<span className="position">{data.position}</span>
 			<RoleIcon game_role={data.allStar.role} />
 			<DescriptionContainer>
-				<span className="firstName">{data.name.first}</span>
-				<span className="lastName">{data.name.last}</span>
+				<p className="lastName">{data.name.last}</p>
 			</DescriptionContainer>
 		</Card>
 	);
