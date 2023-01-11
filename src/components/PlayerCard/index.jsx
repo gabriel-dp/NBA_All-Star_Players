@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import { playerHeadshotUrl, teamLogoUrl } from '../../utils/GitHubAssets';
+
+import TeamLogo from '../TeamLogo';
+import PlayerImage from '../PlayerImage';
 
 import {
 	Card,
@@ -10,9 +12,7 @@ import {
 } from './styles';
 
 function PlayerCard({ data, team }) {
-	const playerImageUrl = playerHeadshotUrl(data);
-	const teamImageUrl = teamLogoUrl(team);
-	const link = `./${data.name.first.toLowerCase()}-${data.name.last.toLowerCase()}`;
+	const link = `./${data.name.first}-${data.name.last}`;
 
 	const navigate = useNavigate();
 	const handleClick = () => navigate(link);
@@ -20,15 +20,12 @@ function PlayerCard({ data, team }) {
 	return (
 		<Card onClick={() => handleClick()}>
 			<PlayerImageContainer>
-				<img
-					alt={`headshot-${data.name.last}`}
-					src={playerImageUrl}
+				<PlayerImage
+					playerData={data}
+					headshot
 				/>
 				<TeamLogoContainer>
-					<img
-						alt={`logo-${team.abv}`}
-						src={teamImageUrl}
-					/>
+					<TeamLogo teamData={team} />
 				</TeamLogoContainer>
 			</PlayerImageContainer>
 			<span className="position">{data.position}</span>
