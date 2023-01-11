@@ -29,4 +29,6 @@ export const Button = styled.button`
 	left: 2rem;
 `;
 
-export const ArrowSymbol = styled(FaArrowLeft)``;
+export const ArrowSymbol = styled(FaArrowLeft)`
+	transform: translate(0, 5%);
+`;

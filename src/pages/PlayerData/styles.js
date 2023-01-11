@@ -104,7 +104,6 @@ export const MidSummary = styled.div`
 	width: 100%;
 	height: 100%;
 	position: relative;
-	transition: none;
 	padding: 0 1rem;
 
 	display: flex;
@@ -160,7 +159,7 @@ export const NumberContainer = styled.div`
 `;
 
 export const PlayerImageContainer = styled.div`
-	height: 100%;
+	height: min(100%, 35rem);
 	width: 100%;
 	filter: drop-shadow(0 0.5rem 1rem #00000077);
 
@@ -168,13 +167,15 @@ export const PlayerImageContainer = styled.div`
 	align-items: flex-end;
 
 	img {
-		height: 100%;
+		max-height: 100%;
 		width: 100%;
 		object-fit: contain;
 		vertical-align: bottom;
+		transition: none;
 	}
 
 	@media screen and (max-width: 1023px) {
+		height: auto;
 		max-height: 25rem;
 		transform: translate(0, 0.5rem); //hide image bottom corners
 
