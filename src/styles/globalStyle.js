@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
 		padding: 0;
 		box-sizing: border-box;
 		font-family: Helvetica;
+		-webkit-tap-highlight-color: transparent;
 		
 		p {
 			font-family: NBA;

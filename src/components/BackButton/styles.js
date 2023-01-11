@@ -21,7 +21,6 @@ export const Button = styled.button`
 			color: ${({ theme }) =>
 				(props) =>
 					props?.colors?.secondary || theme.light};
-			transform: translate(-5%, 0);
 		}
 	}
 
