@@ -40,7 +40,7 @@ function PlayerData() {
 
 	return (
 		<Screen>
-			<BackButton color={teamData?.colors.primary} />
+			<BackButton colors={teamData?.colors} />
 			{playerData && teamData && (
 				<PlayerDataContainer>
 					<FirstSummary colors={teamData.colors}>

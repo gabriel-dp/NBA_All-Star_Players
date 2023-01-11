@@ -2,18 +2,32 @@ import styled from 'styled-components';
 import { FaArrowLeft } from 'react-icons/fa';
 
 export const Button = styled.button`
-	height: 3rem;
-	width: 3rem;
+	height: 2.5rem;
+	aspect-ratio: 1;
 	border: none;
 	background-color: transparent;
+	border-radius: 50%;
 	cursor: pointer;
 
+	transition: all 0.5s ease;
+	* {
+		font-size: 1.25rem;
+		color: ${(props) => props?.colors?.primary || '#222'};
+	}
+
+	:hover {
+		background-color: ${(props) => props?.colors?.primary || '#222'};
+		* {
+			color: ${({ theme }) =>
+				(props) =>
+					props?.colors?.secondary || theme.light};
+			transform: translate(-5%, 0);
+		}
+	}
+
 	position: absolute;
-	top: 1.5rem;
-	left: 1.5rem;
+	top: 2rem;
+	left: 2rem;
 `;
 
-export const ArrowSymbol = styled(FaArrowLeft)`
-	font-size: 1.5rem;
-	color: ${(props) => props.color || '#222'};
-`;
+export const ArrowSymbol = styled(FaArrowLeft)``;
