@@ -105,13 +105,14 @@ export const MidSummary = styled.div`
 	height: 100%;
 	position: relative;
 	transition: none;
+	padding: 0 1rem;
 
 	display: flex;
 	flex-direction: column-reverse;
 	align-items: center;
 
 	@media screen and (max-width: 1023px) {
-		height: max(25rem, 50vw);
+		height: auto;
 	}
 `;
 
@@ -159,24 +160,27 @@ export const NumberContainer = styled.div`
 `;
 
 export const PlayerImageContainer = styled.div`
-	height: min(100%, 35rem);
-	max-width: 100%;
-	padding: 0 1rem;
+	height: 100%;
+	width: 100%;
 	filter: drop-shadow(0 0.5rem 1rem #00000077);
 
 	display: flex;
 	align-items: flex-end;
 
 	img {
-		z-index: 1;
-		max-height: 100%;
-		max-width: 100%;
+		height: 100%;
+		width: 100%;
 		object-fit: contain;
 		vertical-align: bottom;
 	}
 
 	@media screen and (max-width: 1023px) {
+		max-height: 25rem;
 		transform: translate(0, 0.5rem); //hide image bottom corners
+
+		img {
+			max-height: 25rem;
+		}
 	}
 `;
 
