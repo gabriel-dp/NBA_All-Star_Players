@@ -3,7 +3,9 @@ import { FaBasketballBall } from 'react-icons/fa';
 
 export const LoadingContainer = styled.div`
 	position: absolute;
-	bottom: 50%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 `;
 
 const rotate = keyframes`

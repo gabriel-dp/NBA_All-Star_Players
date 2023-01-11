@@ -48,3 +48,8 @@ export const NoResultsContainer = styled.div`
 	display: flex;
 	justify-content: center;
 `;
+
+export const LoadingContainer = styled.div`
+	margin: 5rem;
+	position: relative;
+`;

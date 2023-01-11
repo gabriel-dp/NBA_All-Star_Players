@@ -4,8 +4,16 @@ import { fetchGetData, allstarLogoUrl } from '../../utils/GitHubAssets';
 import PlayerFilter from '../../components/PlayerFilter';
 import PlayerCard from '../../components/PlayerCard';
 import Footer from '../../components/Footer';
+import LoadingBall from '../../components/LoadingBall';
 
-import { Screen, HomeContainer, LogoContainer, CardsContainer, NoResultsContainer } from './styles';
+import {
+	Screen,
+	HomeContainer,
+	LogoContainer,
+	CardsContainer,
+	NoResultsContainer,
+	LoadingContainer,
+} from './styles';
 
 // Get team by last name because in some teams the name is different from original
 // 'Los Angeles Clippers' !== 'LA Clippers'
@@ -32,6 +40,11 @@ function Home() {
 		fetchGetData('/teams', setTeams, true);
 	}, []);
 
+	const [isLoading, setIsLoading] = useState(true);
+	useEffect(() => {
+		if (allPlayers && teams) setIsLoading(false);
+	}, [allPlayers, teams]);
+
 	return (
 		<Screen>
 			<HomeContainer>
@@ -48,10 +61,13 @@ function Home() {
 					allPlayers={allPlayers}
 					setShowPlayers={setShowPlayers}
 				/>
-				{showPlayers?.length === 0 ? (
-					<NoResults />
+				{isLoading ? (
+					<LoadingContainer>
+						<LoadingBall />
+					</LoadingContainer>
 				) : (
 					<CardsContainer>
+						{showPlayers?.length === 0 && <NoResults />}
 						{showPlayers?.map((player) => (
 							<PlayerCard
 								data={player}

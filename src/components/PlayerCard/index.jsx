@@ -23,7 +23,7 @@ function PlayerCard({ data, team }) {
 	return (
 		<Card onClick={() => handleClick()}>
 			<PlayerImageContainer>
-				{!imageIsLoaded && <LoadingBall />}
+				{imageIsLoaded && <LoadingBall />}
 				<PlayerImage
 					playerData={data}
 					headshot
