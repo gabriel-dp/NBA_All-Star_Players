@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { fetchGetData, playerSignatureUrl } from '../../utils/GitHubAssets';
 import TeamLogo from '../../components/TeamLogo';
 import PlayerImage from '../../components/PlayerImage';
+import BackButton from '../../components/BackButton';
 
 import {
 	Screen,
@@ -39,6 +40,7 @@ function PlayerData() {
 
 	return (
 		<Screen>
+			<BackButton color={teamData?.colors.primary} />
 			{playerData && teamData && (
 				<PlayerDataContainer>
 					<FirstSummary colors={teamData.colors}>
