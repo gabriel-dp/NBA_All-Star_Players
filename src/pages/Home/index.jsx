@@ -28,8 +28,8 @@ function Home() {
 	const [showPlayers, setShowPlayers] = useState(null);
 
 	useEffect(() => {
-		fetchGetData('/players', setAllPlayers);
-		fetchGetData('/teams', setTeams);
+		fetchGetData('/players', setAllPlayers, true);
+		fetchGetData('/teams', setTeams, true);
 	}, []);
 
 	return (

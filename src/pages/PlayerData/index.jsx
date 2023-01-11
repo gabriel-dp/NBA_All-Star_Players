@@ -32,13 +32,13 @@ function PlayerData() {
 
 	// Get player data based on Url params
 	useEffect(() => {
-		fetchGetData(`/players/get/${playerName}`, setPlayerData);
+		fetchGetData(`/players/get/${playerName}`, setPlayerData, true);
 	}, [playerName]);
 
 	// Get team data after process player data
 	useEffect(() => {
 		if (!playerData) return;
-		fetchGetData(`/teams/get/${playerData.team.name.replace(' ', '-')}`, setTeamData);
+		fetchGetData(`/teams/get/${playerData.team.name.replace(' ', '-')}`, setTeamData, true);
 	}, [playerData]);
 
 	// Loading state to player image
