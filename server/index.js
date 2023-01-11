@@ -14,7 +14,7 @@ connectDB();
 
 app.use(express.json());
 
-app.use(cors({ origin: '*', methods: ['GET'] }));
+app.use(cors());
 app.use('/players', playersRouter);
 app.use('/teams', teamsRouter);
 
