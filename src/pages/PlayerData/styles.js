@@ -176,7 +176,7 @@ export const PlayerImageContainer = styled.div`
 	}
 
 	@media screen and (max-width: 1023px) {
-		transform: translate(0, 1rem); //hide image bottom corners
+		transform: translate(0, 0.5rem); //hide image bottom corners
 	}
 `;
 
@@ -295,7 +295,7 @@ export const EndSummary = styled.div`
 export const PlayerProfileContainer = styled.div`
 	width: 100%;
 	padding: 2rem;
-	border-radius: 1rem;
+	border-radius: 0.5rem;
 	z-index: 2;
 
 	display: flex;
