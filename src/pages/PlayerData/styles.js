@@ -47,6 +47,10 @@ export const FirstSummary = styled.div`
 	padding-bottom: 15rem;
 	gap: 1rem;
 
+	* {
+		color: ${(props) => props.colors.primary};
+	}
+
 	@media screen and (max-width: 1023px) {
 		height: auto;
 		padding: 3rem 0;
@@ -61,7 +65,6 @@ export const FirstSummary = styled.div`
 `;
 
 export const NameContainer = styled.div`
-	color: ${(props) => props.colors.primary};
 	text-transform: uppercase;
 	font-family: 'NBA';
 	overflow-wrap: break-word;
@@ -87,7 +90,6 @@ export const NameContainer = styled.div`
 export const DetailsContainer = styled.div`
 	font-size: 1rem;
 	font-weight: bold;
-	color: ${(props) => props.colors.primary};
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
@@ -160,7 +162,7 @@ export const PlayerImageContainer = styled.div`
 	height: min(100%, 35rem);
 	max-width: 100%;
 	padding: 0 1rem;
-	filter: drop-shadow(0 0.5rem 0.5rem #00000077);
+	filter: drop-shadow(0 0.5rem 1rem #00000077);
 
 	display: flex;
 	align-items: flex-end;
@@ -196,6 +198,22 @@ export const StatsContainer = styled.div`
 	justify-content: space-evenly;
 	gap: 0.75rem;
 
+	div {
+		color: ${(props) => props.colors.primary};
+		background-color: ${(props) => props.colors.secondary};
+		border: 1px solid ${(props) => props.colors.primary};
+
+		&.mainStat {
+			background-color: ${(props) => props.colors.primary};
+			border: 1px solid ${(props) => props.colors.secondary};
+			color: ${(props) => props.colors.secondary};
+		}
+
+		:hover {
+			filter: drop-shadow(0 0 0.5rem ${(props) => props.colors.secondary}aa);
+		}
+	}
+
 	@media screen and (max-width: 1023px) {
 		margin-bottom: 0;
 	}
@@ -204,9 +222,7 @@ export const StatsContainer = styled.div`
 export const SingleStatContainer = styled.div`
 	height: min(20vw, 90%);
 	width: min(20vw, 100%);
-	color: ${(props) => props.colors.primary};
-	background-color: ${(props) => props.colors.secondary};
-	border: 1px solid ${(props) => props.colors.primary};
+
 	border-radius: 0.75rem;
 	font-weight: bold;
 	font-size: 0.8rem;
@@ -223,7 +239,6 @@ export const SingleStatContainer = styled.div`
 	}
 
 	:hover {
-		filter: drop-shadow(0 0 0.5rem ${(props) => props.colors.secondary}aa);
 		span {
 			letter-spacing: 0.15rem;
 		}
@@ -233,9 +248,6 @@ export const SingleStatContainer = styled.div`
 		height: min(25vw, 100%);
 		width: min(25vw, 90%);
 		aspect-ratio: 1.5;
-		background-color: ${(props) => props.colors.primary};
-		border: 1px solid ${(props) => props.colors.secondary};
-		color: ${(props) => props.colors.secondary};
 
 		.number {
 			font-size: 3.5rem;
@@ -261,6 +273,16 @@ export const EndSummary = styled.div`
 	align-items: flex-end;
 	padding: 1rem;
 
+	.summary {
+		background-color: ${(props) => props.colors.primary};
+	}
+
+	* {
+		color: ${(props) => props.colors.secondary};
+		border-color: ${(props) => props.colors.secondary};
+		border-radius: 5px;
+	}
+
 	@media screen and (max-width: 1023px) {
 		padding-top: 0;
 
@@ -273,16 +295,9 @@ export const EndSummary = styled.div`
 
 export const PlayerProfileContainer = styled.div`
 	width: 100%;
-	background-color: ${(props) => props.colors.primary};
 	padding: 2rem;
 	border-radius: 1rem;
-	filter: drop-shadow(0 0 0.5rem #00000077);
 	z-index: 2;
-
-	* {
-		color: ${(props) => props.colors.secondary};
-		border-color: ${(props) => props.colors.secondary};
-	}
 
 	display: flex;
 	flex-direction: column;
@@ -303,10 +318,13 @@ export const PersonalDataItem = styled.div`
 	hr {
 		margin-top: 0.75rem;
 	}
+
+	:hover {
+		letter-spacing: 0.15rem;
+	}
 `;
 
 export const SignatureContainer = styled.div`
-	width: 100%;
 	height: 3rem;
 	margin-top: 0.5rem;
 	filter: opacity(50%) drop-shadow(0 0 1px ${(props) => props.colors.secondary})
@@ -321,5 +339,12 @@ export const SignatureContainer = styled.div`
 		max-height: 100%;
 		max-width: 100%;
 		object-fit: contain;
+	}
+
+	:hover {
+		filter: opacity(50%) drop-shadow(0 0 1px ${(props) => props.colors.secondary})
+			drop-shadow(0 0 0 ${(props) => props.colors.secondary})
+			drop-shadow(0 0 0 ${(props) => props.colors.secondary})
+			drop-shadow(0 0 0.2rem ${(props) => props.colors.secondary});
 	}
 `;

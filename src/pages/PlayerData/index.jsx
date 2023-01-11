@@ -44,18 +44,12 @@ function PlayerData() {
 		<Screen>
 			{playerData && teamData && (
 				<PlayerDataContainer>
-					<FirstSummary>
-						<NameContainer
-							className="name"
-							colors={teamData.colors}
-						>
+					<FirstSummary colors={teamData.colors}>
+						<NameContainer className="name">
 							<p className="first">{playerData.name.first}</p>
 							<p className="last">{playerData.name.last}</p>
 						</NameContainer>
-						<DetailsContainer
-							className="details"
-							colors={teamData.colors}
-						>
+						<DetailsContainer className="details">
 							<span>{teamData.name}</span>
 							<span>|</span>
 							{playerData.position.map((pos) => (
@@ -81,26 +75,23 @@ function PlayerData() {
 						<NumberContainer colors={teamData.colors}>
 							<p>#{playerData.team.number}</p>
 						</NumberContainer>
-						<StatsContainer>
-							<SingleStatContainer colors={teamData.colors}>
+						<StatsContainer colors={teamData.colors}>
+							<SingleStatContainer>
 								<p className="number">{playerData.stats.reb}</p>
 								<span>REB</span>
 							</SingleStatContainer>
-							<SingleStatContainer
-								className="mainStat"
-								colors={teamData.colors}
-							>
+							<SingleStatContainer className="mainStat">
 								<p className="number">{playerData.stats.pts}</p>
 								<span>PTS</span>
 							</SingleStatContainer>
-							<SingleStatContainer colors={teamData.colors}>
+							<SingleStatContainer>
 								<p className="number">{playerData.stats.ast}</p>
 								<span>AST</span>
 							</SingleStatContainer>
 						</StatsContainer>
 					</MidSummary>
-					<EndSummary>
-						<PlayerProfileContainer colors={teamData.colors}>
+					<EndSummary colors={teamData.colors}>
+						<PlayerProfileContainer className="summary">
 							{Object.keys(playerData.personalData).map((info) => (
 								<PersonalDataItem key={info}>
 									<p>{info}</p>
