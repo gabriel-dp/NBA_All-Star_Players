@@ -23,20 +23,26 @@ import {
 	PersonalDataItem,
 	SignatureContainer,
 } from './styles';
+import LoadingBall from '../../components/LoadingBall';
 
 function PlayerData() {
 	const playerName = useParams().name;
 	const [playerData, setPlayerData] = useState(null);
 	const [teamData, setTeamData] = useState(null);
 
+	// Get player data based on Url params
 	useEffect(() => {
 		fetchGetData(`/players/get/${playerName}`, setPlayerData);
 	}, [playerName]);
 
+	// Get team data after process player data
 	useEffect(() => {
 		if (!playerData) return;
 		fetchGetData(`/teams/get/${playerData.team.name.replace(' ', '-')}`, setTeamData);
 	}, [playerData]);
+
+	// Loading state to player image
+	const [imageIsLoaded, setImageIsLoaded] = useState(false);
 
 	return (
 		<Screen>
@@ -60,10 +66,12 @@ function PlayerData() {
 						<TeamLogoContainer>
 							<TeamLogo teamData={teamData} />
 						</TeamLogoContainer>
+						{!imageIsLoaded && <LoadingBall color={teamData.colors.primary} />}
 						<PlayerImageContainer>
 							<PlayerImage
 								playerData={playerData}
 								profile
+								setImageIsLoaded={setImageIsLoaded}
 							/>
 						</PlayerImageContainer>
 						<NumberContainer colors={teamData.colors}>

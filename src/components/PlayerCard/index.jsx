@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import TeamLogo from '../TeamLogo';
 import PlayerImage from '../PlayerImage';
+import LoadingBall from '../LoadingBall';
 
 import {
 	Card,
@@ -12,17 +14,20 @@ import {
 } from './styles';
 
 function PlayerCard({ data, team }) {
-	const link = `./${data.name.first}-${data.name.last}`;
+	const [imageIsLoaded, setImageIsLoaded] = useState(false);
 
+	const link = `./${data.name.first}-${data.name.last}`;
 	const navigate = useNavigate();
 	const handleClick = () => navigate(link);
 
 	return (
 		<Card onClick={() => handleClick()}>
 			<PlayerImageContainer>
+				{!imageIsLoaded && <LoadingBall />}
 				<PlayerImage
 					playerData={data}
 					headshot
+					setImageIsLoaded={setImageIsLoaded}
 				/>
 				<TeamLogoContainer>
 					<TeamLogo teamData={team} />
