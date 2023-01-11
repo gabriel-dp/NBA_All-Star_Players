@@ -2,49 +2,50 @@ import styled from 'styled-components';
 
 export const Screen = styled.div`
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	position: relative;
 	background-color: ${({ theme }) => theme.light};
 
 	display: flex;
 	justify-content: center;
+	align-items: flex-end;
 
 	* {
 		transition: all ease 0.2s;
-	}
-
-	@media screen and (max-width: 1023px) {
-		overflow-y: scroll;
 	}
 `;
 
 export const PlayerDataContainer = styled.div`
 	width: min(100%, 80rem);
-	height: 100%;
+	height: min(50rem, 40rem);
+	min-height: 40rem;
 	padding: 0 2rem;
 
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) minmax(0, 2.5fr) minmax(0, 1fr);
 	grid-template-rows: minmax(0, 1fr);
+	align-items: end;
 
 	* {
 		user-select: none;
 	}
 
 	@media screen and (max-width: 1023px) {
+		height: auto;
 		display: flex;
 		flex-direction: column;
 	}
 `;
 
 export const FirstSummary = styled.div`
+	width: 100%;
 	height: 100%;
 	text-align: right;
+	padding: 3rem 0;
 
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-end;
-	padding-bottom: 15rem;
+	justify-content: center;
 	gap: 1rem;
 
 	* {
@@ -53,7 +54,6 @@ export const FirstSummary = styled.div`
 
 	@media screen and (max-width: 1023px) {
 		height: auto;
-		padding: 3rem 0;
 		.name {
 			text-align: center;
 		}
@@ -104,6 +104,7 @@ export const MidSummary = styled.div`
 	width: 100%;
 	height: 100%;
 	position: relative;
+	transition: none;
 
 	display: flex;
 	flex-direction: column-reverse;
@@ -117,7 +118,6 @@ export const MidSummary = styled.div`
 export const TeamLogoContainer = styled.div`
 	width: 100%;
 	height: min(100%, 25rem);
-	transition: none;
 	z-index: 0;
 	filter: blur(1px);
 
@@ -145,7 +145,7 @@ export const NumberContainer = styled.div`
 
 	position: absolute;
 	left: 2rem;
-	bottom: 20rem;
+	bottom: 50%;
 
 	@media screen and (max-width: 1023px) {
 		left: auto;
@@ -176,7 +176,6 @@ export const PlayerImageContainer = styled.div`
 	}
 
 	@media screen and (max-width: 1023px) {
-		height: min(35rem, 100%);
 		transform: translate(0, 1rem); //hide image bottom corners
 	}
 `;
