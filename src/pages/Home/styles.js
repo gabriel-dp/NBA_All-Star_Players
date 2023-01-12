@@ -23,7 +23,15 @@ export const HomeContainer = styled.div`
 
 export const LogoContainer = styled.div`
 	width: min(80%, 20rem);
-	margin: 2rem;
+	margin: 2rem 0 0 0;
+	color: ${({ theme }) => theme.text};
+	font-size: 0.8rem;
+	user-select: none;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
 
 	img {
 		width: 100%;

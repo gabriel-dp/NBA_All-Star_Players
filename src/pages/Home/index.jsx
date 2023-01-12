@@ -54,6 +54,9 @@ function Home() {
 						src={allstarLogoUrl()}
 						draggable="false"
 					/>
+					<span>
+						<i>Fan-Made</i>
+					</span>
 				</LogoContainer>
 				<PlayerFilter
 					teams={teams}
