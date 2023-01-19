@@ -23,7 +23,6 @@ const playerSchema = new mongoose.Schema({
 	allStar: {
 		team: rString,
 		role: rString,
-		number: rNumber,
 	},
 	stats: {
 		pts: rNumber,
