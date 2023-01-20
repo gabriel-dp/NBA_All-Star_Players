@@ -1,6 +1,6 @@
 import { teamLogoUrl } from '../../utils/GitHubAssets';
 
-function TeamLogo({ teamData }) {
+export default function TeamLogo({ teamData }) {
 	return (
 		<img
 			src={teamLogoUrl(teamData)}
@@ -9,5 +9,3 @@ function TeamLogo({ teamData }) {
 		/>
 	);
 }
-
-export default TeamLogo;

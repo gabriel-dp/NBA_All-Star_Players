@@ -3,7 +3,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import PlayerData from './pages/PlayerData';
 
-function Router() {
+export default function Router() {
 	return (
 		<HashRouter>
 			<Routes>
@@ -21,5 +21,3 @@ function Router() {
 		</HashRouter>
 	);
 }
-
-export default Router;

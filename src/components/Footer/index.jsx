@@ -1,6 +1,6 @@
 import { FooterContainer, FooterWrapper } from './styles';
 
-function Footer() {
+export default function Footer() {
 	return (
 		<FooterContainer>
 			<FooterWrapper>
@@ -27,5 +27,3 @@ function Footer() {
 		</FooterContainer>
 	);
 }
-
-export default Footer;

@@ -25,7 +25,7 @@ import {
 } from './styles';
 import LoadingBall from '../../components/LoadingBall';
 
-function PlayerData() {
+export default function PlayerData() {
 	const playerName = useParams().name;
 	const [playerData, setPlayerData] = useState(null);
 	const [teamData, setTeamData] = useState(null);
@@ -115,5 +115,3 @@ function PlayerData() {
 		</Screen>
 	);
 }
-
-export default PlayerData;

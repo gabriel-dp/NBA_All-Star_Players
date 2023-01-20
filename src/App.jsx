@@ -6,7 +6,7 @@ import defaultTheme from './styles/defaultTheme';
 import GlobalStyle from './styles/globalStyle';
 import Router from './routes';
 
-function App() {
+export default function App() {
 	const [theme, setTheme] = useState(defaultTheme);
 	useEffect(() => {
 		fetchGetData(allstarThemeJson(), setTheme);
@@ -19,5 +19,3 @@ function App() {
 		</ThemeProvider>
 	);
 }
-
-export default App;

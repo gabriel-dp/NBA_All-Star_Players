@@ -10,7 +10,7 @@ import {
 	CheckboxInput,
 } from './styles';
 
-function PlayerFilter({ teams, playerTeam, allPlayers, setShowPlayers }) {
+export default function PlayerFilter({ teams, playerTeam, allPlayers, setShowPlayers }) {
 	const resetFilters = { ...filterOptions };
 	Object.keys(resetFilters).forEach((filter) => {
 		resetFilters[filter] = [];
@@ -99,5 +99,3 @@ function PlayerFilter({ teams, playerTeam, allPlayers, setShowPlayers }) {
 		</FilterContainer>
 	);
 }
-
-export default PlayerFilter;

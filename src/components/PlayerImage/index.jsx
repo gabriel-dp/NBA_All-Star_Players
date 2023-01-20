@@ -1,6 +1,6 @@
 import { playerHeadshotUrl, playerProfileUrl } from '../../utils/GitHubAssets';
 
-function PlayerImage({ playerData, headshot, profile, setImageIsLoaded }) {
+export default function PlayerImage({ playerData, headshot, profile, setImageIsLoaded }) {
 	let imageSrc = null;
 	if (headshot) imageSrc = playerHeadshotUrl(playerData);
 	else if (profile) imageSrc = playerProfileUrl(playerData);
@@ -18,5 +18,3 @@ function PlayerImage({ playerData, headshot, profile, setImageIsLoaded }) {
 		/>
 	);
 }
-
-export default PlayerImage;

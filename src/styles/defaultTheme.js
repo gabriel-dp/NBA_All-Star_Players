@@ -1,4 +1,4 @@
-const defaultTheme = {
+export default {
 	background: '#222222',
 	background2: '#2d2d2d',
 	text: '#dddddd',
@@ -6,5 +6,3 @@ const defaultTheme = {
 	secondary: '#aaaaaa',
 	light: '#bbbbbb',
 };
-
-export default defaultTheme;

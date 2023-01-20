@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { ArrowSymbol, Button } from './styles';
 
-function BackButton({ colors }) {
+export default function BackButton({ colors }) {
 	const navigate = useNavigate();
 
 	return (
@@ -14,5 +14,3 @@ function BackButton({ colors }) {
 		</Button>
 	);
 }
-
-export default BackButton;

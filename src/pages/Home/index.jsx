@@ -30,7 +30,7 @@ function NoResults() {
 	);
 }
 
-function Home() {
+export default function Home() {
 	const [allPlayers, setAllPlayers] = useState(null);
 	const [teams, setTeams] = useState(null);
 	const [showPlayers, setShowPlayers] = useState(null);
@@ -85,5 +85,3 @@ function Home() {
 		</Screen>
 	);
 }
-
-export default Home;

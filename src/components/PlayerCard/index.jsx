@@ -13,7 +13,7 @@ import {
 	TeamLogoContainer,
 } from './styles';
 
-function PlayerCard({ data, team }) {
+export default function PlayerCard({ data, team }) {
 	const [imageIsLoaded, setImageIsLoaded] = useState(false);
 
 	const link = `./${data.name.first}-${data.name.last}`;
@@ -41,5 +41,3 @@ function PlayerCard({ data, team }) {
 		</Card>
 	);
 }
-
-export default PlayerCard;
