@@ -30,6 +30,11 @@ export default function PlayerData() {
 	const [playerData, setPlayerData] = useState(null);
 	const [teamData, setTeamData] = useState(null);
 
+	// Scroll to top on first render (mobile bug)
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	// Get player data based on Url params
 	useEffect(() => {
 		fetchGetData(`/players/get/${playerName}`, setPlayerData, true);
